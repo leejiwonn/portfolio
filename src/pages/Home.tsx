@@ -2,11 +2,9 @@ import styled from '@emotion/styled';
 
 const Home = () => {
   return (
-    <>
-      <HomeStyled>
-        <HomeTitle>Leejiwonn</HomeTitle>
-      </HomeStyled>
-    </>
+    <HomeStyled>
+      <HomeTitle>Hi!</HomeTitle>
+    </HomeStyled>
   );
 };
 
