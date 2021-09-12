@@ -15,14 +15,16 @@
       {
         "legacy": true
       },
+      "@emotion/babel-plugin"
+    ],
+    [
       "module-resolver",
       {
         "root": ["."],
         "alias": {
           "~": "./src"
         }
-      },
-      "@emotion/babel-plugin"
+      }
     ]
   ]
 }
