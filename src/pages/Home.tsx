@@ -1,13 +1,12 @@
 import styled from '@emotion/styled';
-import Link from 'next/link';
+import Header from '~/components/Header';
+import { Color } from '~/utils/color';
 
 const Home = () => {
   return (
     <HomeStyled>
-      <HomeTitle>Hi!</HomeTitle>
-      <Link href="/blog">
-        <BlogButton>블로그로 이동하기</BlogButton>
-      </Link>
+      <Header />
+      <ContentStyled></ContentStyled>
     </HomeStyled>
   );
 };
@@ -15,22 +14,13 @@ const Home = () => {
 const HomeStyled = styled.div`
   width: 100vw;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  background-color: ${Color.DEPTH_L};
 `;
 
-const HomeTitle = styled.p`
-  font-size: 120px;
-  font-weight: bold;
-  z-index: 2;
-`;
-
-const BlogButton = styled.button`
-  font-size: 24px;
-  padding: 10px 20px;
-  cursor: pointer;
+const ContentStyled = styled.div`
+  width: 100%;
+  height: 100%;
+  overflow-x: scroll;
 `;
 
 export default Home;
