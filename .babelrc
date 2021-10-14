@@ -16,6 +16,16 @@
         "legacy": true
       },
       "@emotion/babel-plugin"
+    ],
+    [
+      "babel-plugin-root-import",
+      {
+        "rootPathPrefix": "~",
+        "rootPathSuffix": "src"
+      }
+    ],
+    [
+      "inline-react-svg"
     ]
   ]
 }
