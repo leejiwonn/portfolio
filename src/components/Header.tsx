@@ -37,7 +37,9 @@ const HeaderStyled = styled.div`
   justify-content: space-between;
   align-items: center;
   border-bottom: 4px solid ${Color.DEPTH_D};
+  background-color: ${Color.DEPTH_L};
   padding: 0 20px;
+  z-index: 999;
 `;
 
 const Logo = styled.a``;
