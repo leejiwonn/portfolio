@@ -22,9 +22,8 @@ const Home = () => {
       scrollTrigger: {
         trigger: '.container',
         pin: true,
-        scrub: 1,
-        snap: 1 / (sections.length - 1),
-        end: '+=3500',
+        scrub: true,
+        end: '+=3000',
       },
     });
   }, []);
@@ -75,6 +74,8 @@ const Home = () => {
 const HomeStyled = styled.div`
   width: 100vw;
   height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
   display: flex;
   flex-wrap: no-wrap;
   background-color: ${Color.DEPTH_L};
