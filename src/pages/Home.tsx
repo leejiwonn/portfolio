@@ -11,6 +11,7 @@ import { FontType } from '~/utils/font';
 
 import SpeechIcon from '../../public/icons/icon-speech.svg';
 import Dot from '~/components/Dot';
+import Noise from '~/components/Noise';
 
 const Home = () => {
   const [maxWidth, setMaxWidth] = useState(0);
@@ -506,6 +507,7 @@ const Home = () => {
         </EndStyled>
       </HomeStyled>
       {/* <Footer /> */}
+      <Noise maxWidth={maxWidth} />
     </>
   );
 };
