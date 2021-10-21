@@ -12,13 +12,14 @@ html {
 }
 
 body {
+  height: 100vh;
   margin: 0;
   overscroll-behavior: none;
   -ms-overflow-style: none;
-  background-image: url('/public/images/paper.jpg');
+  background-image: url('../public/images/paper.png');
   background-size: cover;
-  background-repeat: no-repeat;
   background-position: 100% 100%;
+  background-blend-mode: luminosity;
 }
 
 body::-webkit-scrollbar {

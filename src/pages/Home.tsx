@@ -713,6 +713,7 @@ const EndStyled = styled.section`
   align-items: center;
   background-color: ${Color.DEPTH_D};
   padding: 0 30px;
+  padding-bottom: 150px;
   z-index: 999;
 `;
 
