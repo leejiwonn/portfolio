@@ -1,8 +1,8 @@
 const Color = {
-  DEPTH_D: '#212121',
-  DEPTH_L: '#FCFAF2',
-  POINT_O: '#FFBB69',
-  POINT_B: '#DBAE8F',
+  DEPTH_D: '#404B50',
+  DEPTH_L: '#FEFEFE',
+  POINT_O: '#FFB340',
+  POINT_B: '#CEE9F7',
 } as const;
 
 type Color = typeof Color[keyof typeof Color];

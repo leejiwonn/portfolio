@@ -13,7 +13,12 @@ html {
 
 body {
   margin: 0;
+  overscroll-behavior: none;
   -ms-overflow-style: none;
+  background-image: url('/public/images/paper.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
 }
 
 body::-webkit-scrollbar {
