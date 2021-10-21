@@ -7,16 +7,16 @@ const Weight = {
 } as const;
 
 const FontSize = {
-  SIZE_BIG: 86,
-  SIZE_HEAD_01: 64,
-  SIZE_HEAD_02: 52,
-  SIZE_TITLE_01: 28,
-  SIZE_TITLE_02: 24,
-  SIZE_BODY_01: 20,
-  SIZE_BODY_02: 16,
-  SIZE_BODY_03: 14,
-  SIZE_CAPTION_01: 12,
-  SIZE_CAPTION_02: 10,
+  SIZE_BIG: 8.4,
+  SIZE_HEAD_01: 6.2,
+  SIZE_HEAD_02: 5.0,
+  SIZE_TITLE_01: 2.6,
+  SIZE_TITLE_02: 2.2,
+  SIZE_BODY_01: 1.8,
+  SIZE_BODY_02: 1.4,
+  SIZE_BODY_03: 1.2,
+  SIZE_CAPTION_01: 1.0,
+  SIZE_CAPTION_02: 0.8,
 } as const;
 
 const Align = {

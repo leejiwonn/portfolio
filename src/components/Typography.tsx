@@ -34,14 +34,14 @@ const Typography = ({
   return (
     <TagComponent
       style={{
-        fontSize: style.size,
+        fontSize: style.size + 'em',
         fontWeight: style.weight,
         color: color,
         textAlign: align,
-        marginTop: marginTop,
-        marginBottom: marginBottom,
-        marginLeft: marginLeft,
-        marginRight: marginRight,
+        marginTop: marginTop / 100 + 'em',
+        marginBottom: marginBottom / 100 + 'em',
+        marginLeft: marginLeft / 100 + 'em',
+        marginRight: marginRight / 100 + 'em',
         lineHeight: lineHeight,
       }}
     >

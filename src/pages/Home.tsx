@@ -514,10 +514,10 @@ const Home = () => {
 
 const HomeStyled = styled.div<{ maxWidth: number }>`
   width: ${({ maxWidth }) => maxWidth + 'px'};
-  height: calc(100vh - 88px);
+  height: calc(100vh - 8.8em);
   overflow: hidden;
   display: flex;
-  padding-top: 60px;
+  padding-top: 6em;
   border-bottom: 3px solid ${Color.DEPTH_D};
 `;
 
@@ -528,8 +528,8 @@ const Page1Styled = styled.section`
 `;
 
 const Page1MainTitle = styled.div`
-  padding-left: 100px;
-  padding-right: 370px;
+  padding-left: 10em;
+  padding-right: 37em;
 `;
 
 const Page2Styled = styled.section`
@@ -547,42 +547,42 @@ const Page2Box = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding-left: 150px;
+  padding-left: 15em;
 `;
 
 const Page2SubTitleStyled = styled.div`
   position: absolute;
-  top: -20px;
-  left: 540px;
+  top: -1.2vh;
+  left: 53em;
 `;
 
 const Page2SubTitleBox = styled.div`
   position: relative;
-  padding: 12px;
+  padding: 1.2em;
   border-radius: 10px;
   background-color: ${Color.DEPTH_D};
 `;
 
 const SpeechIconStyled = styled.div`
   position: absolute;
-  top: 50px;
+  top: 4.5em;
   left: 50%;
 `;
 
 const Page2DetailInfo = styled.div`
   display: flex;
   flex-direction: row;
-  padding-top: 80px;
+  padding-top: 8em;
 `;
 
 const Page2Deco = styled.div`
   width: auto;
-  height: 89%;
+  height: 86%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
-  margin-left: 170px;
+  margin-left: 17em;
 `;
 
 const Page3Styled = styled.section`
@@ -595,22 +595,22 @@ const Page3Styled = styled.section`
 `;
 
 const Page3Item = styled.button<{ last?: boolean; active: boolean }>`
-  width: 1300px;
-  height: 100%;
+  width: 130em;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: ${({ active }) => (active ? 'flex-start' : 'center')};
   align-items: flex-start;
   border-bottom: ${({ last }) => !last && `3px solid ${Color.DEPTH_D}`};
   padding: 0 50px;
-  padding-top: ${({ active }) => active && '20px'};
+  padding-top: ${({ active }) => active && '2em'};
   background-color: ${({ active }) => active && Color.DEPTH_D};
   transition: 0.6s;
 `;
 
 const Page3ItemBox = styled.div<{ active: boolean }>`
   width: 100%;
-  height: ${({ active }) => (active ? '500px' : 0)};
+  height: ${({ active }) => (active ? '50vh' : 0)};
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -620,7 +620,7 @@ const Page3ItemBox = styled.div<{ active: boolean }>`
 `;
 
 const Page3ItemInfo = styled.div`
-  margin-top: -50px;
+  margin-top: -5em;
 `;
 
 const Page4Styled = styled.section`
@@ -646,35 +646,35 @@ const Page5Box = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin: 0 160px;
+  margin: 0 16em;
 `;
 
 const Page5BoxItem = styled.div`
-  width: 400px;
-  height: 400px;
+  width: 36em;
+  height: 45vh;
   position: relative;
   border: 4px solid ${Color.DEPTH_D};
   border-radius: 10px;
-  margin: 0 15px;
+  margin: 0 1.5em;
 `;
 
 const Page5BoxItemBar = styled.div`
   width: 100%;
-  height: 50px;
+  height: 5em;
   display: flex;
   flex-direction: row;
   align-items: center;
   position: absolute;
   background-color: ${Color.DEPTH_D};
-  padding-left: 20px;
+  padding-left: 2em;
 `;
 
 const Page5BoxItemCircle = styled.div<{ color: Color }>`
-  width: 20px;
-  height: 20px;
+  width: 2em;
+  height: 2em;
   border-radius: 50%;
   background-color: ${({ color }) => color};
-  margin-right: 10px;
+  margin-right: 1em;
 `;
 
 const Page5BoxInfo = styled.div`
@@ -684,8 +684,8 @@ const Page5BoxInfo = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-start;
-  padding: 50px;
-  padding-top: 100px;
+  padding: 5em;
+  padding-top: 10em;
 `;
 
 const Page6Styled = styled.div`
@@ -702,29 +702,29 @@ const Page6Box = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding-left: 160px;
-  padding-right: 300px;
+  padding-left: 16em;
+  padding-right: 30em;
 `;
 
 const EndStyled = styled.section`
-  width: 100px;
+  width: 10em;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: ${Color.DEPTH_D};
-  padding: 0 30px;
-  padding-bottom: 150px;
+  padding: 0 3em;
+  padding-bottom: 15em;
   z-index: 999;
 `;
 
 const LinkButton = styled.button`
-  width: 40px;
-  height: 40px;
+  width: 4em;
+  height: 4em;
   background-color: ${Color.DEPTH_L};
   border-radius: 50%;
-  margin: 10px 0;
+  margin: 1em 0;
 `;
 
 export default Home;

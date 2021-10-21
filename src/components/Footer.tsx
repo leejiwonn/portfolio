@@ -24,7 +24,7 @@ const Footer = () => {
 
 const FooterStyled = styled.div`
   width: 100%;
-  height: 80px;
+  height: 8em;
   position: fixed;
   left: 0;
   bottom: 0;
@@ -35,24 +35,24 @@ const FooterStyled = styled.div`
 `;
 
 const Page1Styled = styled.div`
-  width: 1800px;
+  width: 180em;
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-left: 100px;
-  margin-top: -100px;
+  padding-left: 10em;
+  margin-top: -10em;
 `;
 
 const Line = styled.div`
-  width: 400px;
+  width: 40em;
   height: 3px;
   background-color: ${Color.DEPTH_D};
 `;
 
 const Page2Styled = styled.div`
-  width: 1000px;
+  width: 100em;
   border-top: 3px solid ${Color.DEPTH_D};
-  padding: 0 20px;
+  padding: 0 2em;
 `;
 
 export default Footer;

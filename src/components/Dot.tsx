@@ -19,12 +19,12 @@ const DotStyled = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 50px;
+  padding: 5em;
 `;
 
 const DotItem = styled.div`
-  width: 24px;
-  height: 24px;
+  width: 2.4em;
+  height: 2.4em;
   border-radius: 50%;
   background-color: ${Color.DEPTH_D};
 `;

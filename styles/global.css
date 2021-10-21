@@ -311,3 +311,31 @@ video {
 select::-ms-expand {
   display: none;
 }
+
+/* 반응형 대응 */
+
+@media screen and (max-width : 1280px) {
+  html, body, div, p, span, button, a {
+    font-size: 8px;
+  }
+}
+@media screen and (max-width : 1440px) {
+  html, body, div, p, span, button, a {
+    font-size: 10px;
+  }
+}
+@media screen and (min-width : 1441px) and (max-width : 1920px) {
+  html, body, div, p, span, button, a {
+    font-size: 12px;
+  }
+}
+@media screen and (min-width : 1921px) and (max-width : 2560px) {
+  html, body, div, p, span, button, a {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width : 2561px) {
+  html, body, div, p, span, button, a {
+    font-size: 28px;
+  }
+}
