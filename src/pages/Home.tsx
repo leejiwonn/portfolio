@@ -7,7 +7,7 @@ import Header from '~/components/Header';
 // import Footer from '~/components/Footer';
 import Typography from '~/components/Typography';
 import { Color } from '~/utils/color';
-import { FontType } from '~/utils/font';
+import { Align, FontType } from '~/utils/font';
 
 import SpeechIcon from '../../public/icons/icon-speech.svg';
 import Dot from '~/components/Dot';
@@ -59,8 +59,8 @@ const Home = () => {
       <HomeStyled ref={scrollRef} className="container" maxWidth={maxWidth}>
         <Page1Styled>
           <Page1MainTitle className="main-title">
-            <Typography font="BOLD_TITLE_01">Hi There! 👋</Typography>
-            <Typography tag="h1" font="EXTRA_BOLD_HEAD_01">
+            <Typography font={FontType.BOLD_TITLE_01}>Hi There! 👋</Typography>
+            <Typography tag="h1" font={FontType.EXTRA_BOLD_HEAD_01}>
               I’m Jiwon Lee,
               <br />
               Front-End Developer.
@@ -372,6 +372,138 @@ const Home = () => {
         <Page4Styled>
           <Dot />
         </Page4Styled>
+        <Page5Styled>
+          <Dot />
+          <Page5Box>
+            <Page5BoxItem>
+              <Page5BoxItemBar>
+                <Page5BoxItemCircle color={Color.POINT_O} />
+                <Page5BoxItemCircle color={Color.POINT_B} />
+                <Page5BoxItemCircle color={Color.DEPTH_L} />
+              </Page5BoxItemBar>
+              <Page5BoxInfo>
+                <Typography font={FontType.SEMI_BOLD_TITLE_01}>
+                  42SEOUL
+                </Typography>
+                <div>
+                  <Typography
+                    font={FontType.SEMI_BOLD_TITLE_02}
+                    marginBottom={20}
+                  >
+                    2020.12 ~ Current
+                  </Typography>
+                  <Typography font={FontType.LIGHT_BODY_01}>
+                    이노베이션 아카데미
+                    <br />
+                    소프트웨어 교육프로그램
+                  </Typography>
+                </div>
+              </Page5BoxInfo>
+            </Page5BoxItem>
+            <Page5BoxItem>
+              <Page5BoxItemBar>
+                <Page5BoxItemCircle color={Color.POINT_O} />
+                <Page5BoxItemCircle color={Color.POINT_B} />
+                <Page5BoxItemCircle color={Color.DEPTH_L} />
+              </Page5BoxItemBar>
+              <Page5BoxInfo>
+                <Typography font={FontType.SEMI_BOLD_TITLE_01}>
+                  NEXTERS
+                </Typography>
+                <div>
+                  <Typography
+                    font={FontType.SEMI_BOLD_TITLE_02}
+                    marginBottom={20}
+                  >
+                    2021.07 ~ Current
+                  </Typography>
+                  <Typography font={FontType.LIGHT_BODY_01}>
+                    IT 연합 동아리 : 웹 프론트엔드 개발
+                    <br />
+                    (19기, 20기 운영진 활동)
+                  </Typography>
+                </div>
+              </Page5BoxInfo>
+            </Page5BoxItem>
+            <Page5BoxItem>
+              <Page5BoxItemBar>
+                <Page5BoxItemCircle color={Color.POINT_O} />
+                <Page5BoxItemCircle color={Color.POINT_B} />
+                <Page5BoxItemCircle color={Color.DEPTH_L} />
+              </Page5BoxItemBar>
+              <Page5BoxInfo>
+                <Typography font={FontType.SEMI_BOLD_TITLE_01}>
+                  DEPROMEET
+                </Typography>
+                <div>
+                  <Typography
+                    font={FontType.SEMI_BOLD_TITLE_02}
+                    marginBottom={20}
+                  >
+                    2019.03 ~ 2020.12
+                  </Typography>
+                  <Typography font={FontType.LIGHT_BODY_01}>
+                    IT 연합 동아리 : 웹 프론트엔드 개발
+                    <br />
+                    (6기, 7기 운영진, 8기 활동)
+                  </Typography>
+                </div>
+              </Page5BoxInfo>
+            </Page5BoxItem>
+            <Page5BoxItem>
+              <Page5BoxItemBar>
+                <Page5BoxItemCircle color={Color.POINT_O} />
+                <Page5BoxItemCircle color={Color.POINT_B} />
+                <Page5BoxItemCircle color={Color.DEPTH_L} />
+              </Page5BoxItemBar>
+              <Page5BoxInfo>
+                <Typography font={FontType.SEMI_BOLD_TITLE_01}>
+                  토의스토리
+                </Typography>
+                <div>
+                  <Typography
+                    font={FontType.SEMI_BOLD_TITLE_02}
+                    marginBottom={20}
+                  >
+                    2019.03 ~ 2020.12
+                  </Typography>
+                  <Typography font={FontType.LIGHT_BODY_01}>
+                    계원예술대학교 토의/토론 동아리
+                    <br />
+                    (1기 회장, 2기 회원 활동)
+                  </Typography>
+                </div>
+              </Page5BoxInfo>
+            </Page5BoxItem>
+          </Page5Box>
+        </Page5Styled>
+        <Page6Styled>
+          <Dot />
+          <Page6Box>
+            <Typography font={FontType.EXTRA_BOLD_HEAD_02} marginBottom={120}>
+              Want to talk about anything?
+              <br />
+              Let’s do it! 😄
+            </Typography>
+            <Typography font={FontType.SEMI_BOLD_TITLE_02} marginBottom={10}>
+              PHONE 📞
+            </Typography>
+            <Typography font={FontType.LIGHT_TITLE_01} marginBottom={60}>
+              +82 1087837803
+            </Typography>
+            <Typography font={FontType.SEMI_BOLD_TITLE_02} marginBottom={10}>
+              EMAIL 📬
+            </Typography>
+            <Typography font={FontType.LIGHT_TITLE_01}>
+              bbongwa123@gmail.com
+            </Typography>
+          </Page6Box>
+        </Page6Styled>
+        <EndStyled>
+          <LinkButton>F</LinkButton>
+          <LinkButton>I</LinkButton>
+          <LinkButton>L</LinkButton>
+        </EndStyled>
       </HomeStyled>
       {/* <Footer /> */}
     </>
@@ -495,6 +627,100 @@ const Page4Styled = styled.section`
   align-items: center;
   flex-shrink: 0;
   border-left: 3px solid ${Color.DEPTH_D};
+`;
+
+const Page5Styled = styled.section`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-shrink: 0;
+  border-left: 3px solid ${Color.DEPTH_D};
+`;
+
+const Page5Box = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 160px;
+`;
+
+const Page5BoxItem = styled.div`
+  width: 400px;
+  height: 400px;
+  position: relative;
+  border: 4px solid ${Color.DEPTH_D};
+  border-radius: 10px;
+  margin: 0 15px;
+`;
+
+const Page5BoxItemBar = styled.div`
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  background-color: ${Color.DEPTH_D};
+  padding-left: 20px;
+`;
+
+const Page5BoxItemCircle = styled.div<{ color: Color }>`
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: ${({ color }) => color};
+  margin-right: 10px;
+`;
+
+const Page5BoxInfo = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 50px;
+  padding-top: 100px;
+`;
+
+const Page6Styled = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-shrink: 0;
+  border-left: 3px solid ${Color.DEPTH_D};
+`;
+
+const Page6Box = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 160px;
+  padding-right: 300px;
+`;
+
+const EndStyled = styled.section`
+  width: 100px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: ${Color.DEPTH_D};
+  padding: 0 30px;
+  z-index: 999;
+`;
+
+const LinkButton = styled.button`
+  width: 40px;
+  height: 40px;
+  background-color: ${Color.DEPTH_L};
+  border-radius: 50%;
+  margin: 10px 0;
 `;
 
 export default Home;
