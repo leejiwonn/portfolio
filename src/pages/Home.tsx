@@ -372,6 +372,82 @@ const Home = () => {
         </Page3Styled>
         <Page4Styled>
           <Dot />
+          <Page4Box>
+            <Typography font={FontType.BOLD_TITLE_01} marginBottom={28}>
+              본캐마스터 (2021.07 ~ 2021.09)
+            </Typography>
+            <Typography font={FontType.MEDIUM_TITLE_02} marginBottom={60}>
+              루틴 메이커 앱 👩🏻‍💻 서비스
+            </Typography>
+            <Page4Tags>
+              <Page4TagItem>
+                <Typography font={FontType.BOLD_BODY_02} color={Color.DEPTH_L}>
+                  Typescript
+                </Typography>
+              </Page4TagItem>
+              <Page4TagItem>
+                <Typography font={FontType.BOLD_BODY_02} color={Color.DEPTH_L}>
+                  React Native
+                </Typography>
+              </Page4TagItem>
+              <Page4TagItem>
+                <Typography font={FontType.BOLD_BODY_02} color={Color.DEPTH_L}>
+                  SWR
+                </Typography>
+              </Page4TagItem>
+              <Page4TagItem>
+                <Typography font={FontType.BOLD_BODY_02} color={Color.DEPTH_L}>
+                  MobX
+                </Typography>
+              </Page4TagItem>
+              <Page4TagItem>
+                <Typography font={FontType.BOLD_BODY_02} color={Color.DEPTH_L}>
+                  Emotion
+                </Typography>
+              </Page4TagItem>
+              <Page4TagItem>
+                <Typography font={FontType.BOLD_BODY_02} color={Color.DEPTH_L}>
+                  Lottie
+                </Typography>
+              </Page4TagItem>
+              <Page4TagItem>
+                <Typography font={FontType.BOLD_BODY_02} color={Color.DEPTH_L}>
+                  day.js
+                </Typography>
+              </Page4TagItem>
+            </Page4Tags>
+            <Typography font={FontType.SEMI_BOLD_BODY_01} marginBottom={40}>
+              🔍 주요 업무 : 공동 PM 역할과 프론트엔드 개발을 담당함.
+            </Typography>
+            <Typography font={FontType.LIGHT_BODY_02}>
+              - 카카오 로그인 연동 및 리다이렉션
+              <br />
+              - 메인 화면의 테스크 리스트 뷰, 설정 페이지, 친구 초대 페이지 UI
+              및 기능 구현
+              <br />- 커스텀 텍스트, 모달, 헤더 및 상태바, Toast 메시지 컴포넌트
+              구현 및 적용
+              <br />- 푸시알림 구현을 위한 FCM 설정, Pretendard 폰트 적용
+            </Typography>
+            <Page4LinkButtonStyled>
+              <Page4LinkButton>
+                <Typography
+                  font={FontType.SEMI_BOLD_BODY_02}
+                  color={Color.DEPTH_D}
+                >
+                  VIEW SITE
+                </Typography>
+              </Page4LinkButton>
+              <Page4LinkButton>
+                <Typography
+                  font={FontType.SEMI_BOLD_BODY_02}
+                  color={Color.DEPTH_D}
+                >
+                  GITHUB
+                </Typography>
+              </Page4LinkButton>
+            </Page4LinkButtonStyled>
+          </Page4Box>
+          <Page4ImageView />
         </Page4Styled>
         <Page5Styled>
           <Dot />
@@ -547,7 +623,7 @@ const Page2Box = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding-left: 15em;
+  padding-left: 14em;
 `;
 
 const Page2SubTitleStyled = styled.div`
@@ -625,11 +701,46 @@ const Page3ItemInfo = styled.div`
 
 const Page4Styled = styled.section`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   flex-shrink: 0;
   border-left: 3px solid ${Color.DEPTH_D};
+  padding-right: 220px;
+`;
+
+const Page4Box = styled.div`
+  padding-left: 14em;
+`;
+
+const Page4Tags = styled.div`
+  margin-bottom: 3em;
+`;
+
+const Page4TagItem = styled.div`
+  display: inline-flex;
+  padding: 0.5em 1em;
+  border-radius: 40px;
+  background-color: ${Color.DEPTH_D};
+  margin-right: 0.8em;
+`;
+
+const Page4LinkButtonStyled = styled.div`
+  margin-top: 3em;
+`;
+
+const Page4LinkButton = styled.button`
+  padding: 0.5em 1em;
+  border-radius: 40px;
+  border: 3px solid ${Color.DEPTH_D};
+  margin-right: 0.8em;
+`;
+
+const Page4ImageView = styled.div`
+  width: 60em;
+  height: 40em;
+  background-color: ${Color.DEPTH_D};
+  margin-left: 6em;
 `;
 
 const Page5Styled = styled.section`
@@ -646,7 +757,7 @@ const Page5Box = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin: 0 16em;
+  margin: 0 14em;
 `;
 
 const Page5BoxItem = styled.div`
@@ -702,7 +813,7 @@ const Page6Box = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding-left: 16em;
+  padding-left: 14em;
   padding-right: 30em;
 `;
 
