@@ -1,25 +1,26 @@
 import styled from '@emotion/styled';
 
 import { Color } from '~/utils/color';
+import { FontType } from '~/utils/font';
 import Typography from './Typography';
 
 const Header = () => {
   return (
     <HeaderStyled>
       <Logo href="/">
-        <Typography tag="span" font="SEMI_BOLD_BODY_03">
+        <Typography tag="span" font={FontType.SEMI_BOLD_BODY_02}>
           ☺︎ FE DEV | JIWON LEE
         </Typography>
       </Logo>
       <GithubGrass>잔디잔디</GithubGrass>
       <ButtonView>
         <LinkButton href="https://github.com/leejiwonn">
-          <Typography tag="span" font="SEMI_BOLD_CAPTION_01">
+          <Typography tag="span" font={FontType.SEMI_BOLD_BODY_03}>
             GITHUB
           </Typography>
         </LinkButton>
         <LinkButton href="/blog">
-          <Typography tag="span" font="SEMI_BOLD_CAPTION_01">
+          <Typography tag="span" font={FontType.SEMI_BOLD_BODY_03}>
             BLOG
           </Typography>
         </LinkButton>
