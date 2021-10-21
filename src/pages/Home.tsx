@@ -7,7 +7,7 @@ import Header from '~/components/Header';
 // import Footer from '~/components/Footer';
 import Typography from '~/components/Typography';
 import { Color } from '~/utils/color';
-import { Align, FontType } from '~/utils/font';
+import { FontType } from '~/utils/font';
 
 import SpeechIcon from '../../public/icons/icon-speech.svg';
 import Dot from '~/components/Dot';
@@ -60,7 +60,7 @@ const Home = () => {
         <Page1Styled>
           <Page1MainTitle className="main-title">
             <Typography font={FontType.BOLD_TITLE_01}>Hi There! 👋</Typography>
-            <Typography tag="h1" font={FontType.EXTRA_BOLD_HEAD_01}>
+            <Typography tag="h1" font={FontType.EXTRA_BOLD_BIG}>
               I’m Jiwon Lee,
               <br />
               Front-End Developer.
@@ -513,6 +513,7 @@ const Home = () => {
 const HomeStyled = styled.div<{ maxWidth: number }>`
   width: ${({ maxWidth }) => maxWidth + 'px'};
   height: calc(100vh - 88px);
+  overflow: hidden;
   display: flex;
   padding-top: 60px;
   border-bottom: 3px solid ${Color.DEPTH_D};

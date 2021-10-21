@@ -7,6 +7,7 @@ const Weight = {
 } as const;
 
 const FontSize = {
+  SIZE_BIG: 86,
   SIZE_HEAD_01: 64,
   SIZE_HEAD_02: 52,
   SIZE_TITLE_01: 28,
@@ -25,6 +26,7 @@ const Align = {
 } as const;
 
 const FontType = {
+  EXTRA_BOLD_BIG: 'EXTRA_BOLD_BIG',
   EXTRA_BOLD_HEAD_01: 'EXTRA_BOLD_HEAD_01',
   EXTRA_BOLD_HEAD_02: 'EXTRA_BOLD_HEAD_02',
 
@@ -75,6 +77,9 @@ namespace Font {
 
   const getSize = (font: FontType) => {
     switch (font) {
+      case FontType.EXTRA_BOLD_BIG: {
+        return FontSize.SIZE_BIG;
+      }
       case FontType.EXTRA_BOLD_HEAD_01: {
         return FontSize.SIZE_HEAD_01;
       }
@@ -137,6 +142,7 @@ namespace Font {
 
   const getWeight = (font: FontType) => {
     switch (font) {
+      case FontType.EXTRA_BOLD_BIG:
       case FontType.EXTRA_BOLD_HEAD_01:
       case FontType.EXTRA_BOLD_HEAD_02: {
         return Weight.EXTRA_BOLD;
