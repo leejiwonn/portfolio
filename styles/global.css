@@ -9,6 +9,7 @@ html {
   border-width: 0;
   border-style: solid;
   box-sizing: inherit;
+  cursor: none !important;
 }
 
 body {
