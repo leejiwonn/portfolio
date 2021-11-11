@@ -6,13 +6,12 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import Header from '~/components/Header';
 // import Footer from '~/components/Footer';
 import Typography from '~/components/Typography';
+import Dot from '~/components/Dot';
+import Noise from '~/components/Noise';
 import { Color } from '~/utils/color';
 import { FontType } from '~/utils/font';
 
 import SpeechIcon from '../../public/icons/icon-speech.svg';
-import Dot from '~/components/Dot';
-import Noise from '~/components/Noise';
-import { getContributions } from '~/utils/api';
 
 const Home = () => {
   const [maxWidth, setMaxWidth] = useState(0);
@@ -20,19 +19,6 @@ const Home = () => {
 
   gsap.registerPlugin(ScrollTrigger);
   const scrollRef = useRef<HTMLDivElement>(null);
-
-  /* get github contributions */
-  useEffect(() => {
-    const fetchContributions = async () => {
-      try {
-        const data = await getContributions();
-        console.log(data);
-      } catch (e) {
-        console.warn(e);
-      }
-    };
-    fetchContributions();
-  }, []);
 
   /* horizontal scroll */
   useEffect(() => {

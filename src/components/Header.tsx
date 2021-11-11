@@ -1,10 +1,29 @@
 import styled from '@emotion/styled';
+import { useEffect, useState } from 'react';
 
 import { Color } from '~/utils/color';
 import { FontType } from '~/utils/font';
+import { getContributions } from '~/utils/api';
 import Typography from './Typography';
 
 const Header = () => {
+  const [weekContributions, setWeekContributions] = useState([]);
+
+  /* get github contributions */
+  useEffect(() => {
+    const fetchContributions = async () => {
+      try {
+        const data = await getContributions();
+        const weekData =
+          data.contributionsCollection.contributionCalendar.weeks;
+        setWeekContributions(weekData[weekData.length - 1].contributionDays);
+      } catch (e) {
+        console.warn(e);
+      }
+    };
+    fetchContributions();
+  }, []);
+
   return (
     <HeaderStyled>
       <Logo href="/">
@@ -12,7 +31,11 @@ const Header = () => {
           ☺︎ FE DEV | JIWON LEE
         </Typography>
       </Logo>
-      <GithubGrass>잔디잔디</GithubGrass>
+      <GithubGrass>
+        {weekContributions.map((value, index) => (
+          <GithubGrassItem key={index} color={value.color} />
+        ))}
+      </GithubGrass>
       <ButtonView>
         <LinkButton href="https://github.com/leejiwonn">
           <Typography tag="span" font={FontType.SEMI_BOLD_BODY_02}>
@@ -44,7 +67,18 @@ const HeaderStyled = styled.div`
 
 const Logo = styled.a``;
 
-const GithubGrass = styled.div``;
+const GithubGrass = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+const GithubGrassItem = styled.div<{ color: string }>`
+  width: 2.4em;
+  height: 2.4em;
+  background-color: ${({ color }) => color};
+  border-radius: 0.8em;
+  margin: 0 0.4em;
+`;
 
 const ButtonView = styled.div``;
 

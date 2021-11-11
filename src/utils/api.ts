@@ -1,6 +1,6 @@
 export const getContributions = async () => {
   const headers = {
-    Authorization: `bearer ${process.env.GITHUB_ACCESS_TOKEN}`,
+    Authorization: `bearer ${process.env.NEXT_PUBLIC_GITHUB_ACCESS_TOKEN}`,
   };
   const body = {
     query: `query {
@@ -31,5 +31,5 @@ export const getContributions = async () => {
     headers: headers,
   });
   const data = await response.json();
-  return data;
+  return data.data.user;
 };
