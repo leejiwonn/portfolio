@@ -23,7 +23,7 @@ const Header = () => {
     };
     fetchContributions();
   }, []);
-
+  console.log(7 - weekContributions.length);
   return (
     <HeaderStyled>
       <Logo href="/">
@@ -35,6 +35,10 @@ const Header = () => {
         {weekContributions.map((value, index) => (
           <GithubGrassItem key={index} color={value.color} />
         ))}
+        {weekContributions.length < 7 &&
+          [...Array(7 - weekContributions.length)].map((index) => (
+            <GithubGrassItem key={index} color={Color.DEPTH_L} />
+          ))}
       </GithubGrass>
       <ButtonView>
         <LinkButton href="https://github.com/leejiwonn">
