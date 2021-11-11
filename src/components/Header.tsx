@@ -19,7 +19,7 @@ const Header = () => {
             GITHUB
           </Typography>
         </LinkButton>
-        <LinkButton href="/blog">
+        <LinkButton href="https://leejiwonn.tistory.com">
           <Typography tag="span" font={FontType.SEMI_BOLD_BODY_02}>
             BLOG
           </Typography>
