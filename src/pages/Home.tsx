@@ -94,6 +94,14 @@ const Home = () => {
               Front-End Developer.
             </Typography>
           </Page1MainTitle>
+          <Page1SubTitle>
+            <Typography font={FontType.MEDIUM_TITLE_03}>
+              오늘도 능동적으로 성장하고자
+              <br />
+              열심히 🔥 움직이고 있습니다.
+            </Typography>
+            <Page1Arrow />
+          </Page1SubTitle>
         </Page1Styled>
         <Page2Styled>
           <Dot />
@@ -124,14 +132,14 @@ const Home = () => {
               </Page2SubTitleBox>
             </Page2SubTitleStyled>
             <Page2DetailInfo>
-              <Typography font={FontType.MEDIUM_TITLE_01} marginRight={200}>
+              <Typography font={FontType.MEDIUM_TITLE_02} marginRight={200}>
                 현재,
                 <br />
                 없으면 불편할 서비스를 만드는
                 <br />
                 개발자가 되기 위해 노력중이에요!
               </Typography>
-              <Typography font={FontType.MEDIUM_TITLE_01}>
+              <Typography font={FontType.MEDIUM_TITLE_02}>
                 미래,
                 <br />
                 오래 함께하고 싶은
@@ -151,7 +159,7 @@ const Home = () => {
         <Page3Styled>
           <Page3Item onClick={() => setTechItem(0)} active={techItem === 0}>
             <Typography
-              font={FontType.SEMI_BOLD_TITLE_01}
+              font={FontType.SEMI_BOLD_TITLE_02}
               color={techItem === 0 ? Color.DEPTH_L : Color.DEPTH_D}
             >
               HTML5/CSS3
@@ -166,7 +174,7 @@ const Home = () => {
                   01.
                 </Typography>
                 <Typography
-                  font={FontType.MEDIUM_TITLE_02}
+                  font={FontType.MEDIUM_TITLE_03}
                   color={Color.DEPTH_L}
                 >
                   시맨틱 마크업을 준수하며,
@@ -182,7 +190,7 @@ const Home = () => {
                   02.
                 </Typography>
                 <Typography
-                  font={FontType.MEDIUM_TITLE_02}
+                  font={FontType.MEDIUM_TITLE_03}
                   color={Color.DEPTH_L}
                 >
                   CSS-in-JS 기법을
@@ -199,7 +207,7 @@ const Home = () => {
                   03.
                 </Typography>
                 <Typography
-                  font={FontType.MEDIUM_TITLE_02}
+                  font={FontType.MEDIUM_TITLE_03}
                   color={Color.DEPTH_L}
                 >
                   여러 브라우저를
@@ -211,7 +219,7 @@ const Home = () => {
           </Page3Item>
           <Page3Item onClick={() => setTechItem(1)} active={techItem === 1}>
             <Typography
-              font={FontType.SEMI_BOLD_TITLE_01}
+              font={FontType.SEMI_BOLD_TITLE_02}
               color={techItem === 1 ? Color.DEPTH_L : Color.DEPTH_D}
             >
               JAVASCRIPT (ES6+)
@@ -226,7 +234,7 @@ const Home = () => {
                   01.
                 </Typography>
                 <Typography
-                  font={FontType.MEDIUM_TITLE_02}
+                  font={FontType.MEDIUM_TITLE_03}
                   color={Color.DEPTH_L}
                 >
                   ES2015 이후의
@@ -243,7 +251,7 @@ const Home = () => {
                   02.
                 </Typography>
                 <Typography
-                  font={FontType.MEDIUM_TITLE_02}
+                  font={FontType.MEDIUM_TITLE_03}
                   color={Color.DEPTH_L}
                 >
                   타입스크립트를 이용한
@@ -260,7 +268,7 @@ const Home = () => {
                   03.
                 </Typography>
                 <Typography
-                  font={FontType.MEDIUM_TITLE_02}
+                  font={FontType.MEDIUM_TITLE_03}
                   color={Color.DEPTH_L}
                 >
                   서버 사이드 렌더링 (SSR)
@@ -272,7 +280,7 @@ const Home = () => {
           </Page3Item>
           <Page3Item onClick={() => setTechItem(2)} active={techItem === 2}>
             <Typography
-              font={FontType.SEMI_BOLD_TITLE_01}
+              font={FontType.SEMI_BOLD_TITLE_02}
               color={techItem === 2 ? Color.DEPTH_L : Color.DEPTH_D}
             >
               REACT
@@ -287,7 +295,7 @@ const Home = () => {
                   01.
                 </Typography>
                 <Typography
-                  font={FontType.MEDIUM_TITLE_02}
+                  font={FontType.MEDIUM_TITLE_03}
                   color={Color.DEPTH_L}
                 >
                   리액트 사용에 익숙하며,
@@ -304,7 +312,7 @@ const Home = () => {
                   02.
                 </Typography>
                 <Typography
-                  font={FontType.MEDIUM_TITLE_02}
+                  font={FontType.MEDIUM_TITLE_03}
                   color={Color.DEPTH_L}
                 >
                   상태 관리 라이브러리
@@ -321,7 +329,7 @@ const Home = () => {
                   03.
                 </Typography>
                 <Typography
-                  font={FontType.MEDIUM_TITLE_02}
+                  font={FontType.MEDIUM_TITLE_03}
                   color={Color.DEPTH_L}
                 >
                   모바일 크로스 플랫폼
@@ -337,7 +345,7 @@ const Home = () => {
             active={techItem === 3}
           >
             <Typography
-              font={FontType.SEMI_BOLD_TITLE_01}
+              font={FontType.SEMI_BOLD_TITLE_02}
               color={techItem === 3 ? Color.DEPTH_L : Color.DEPTH_D}
             >
               TOOLING
@@ -352,7 +360,7 @@ const Home = () => {
                   01.
                 </Typography>
                 <Typography
-                  font={FontType.MEDIUM_TITLE_02}
+                  font={FontType.MEDIUM_TITLE_03}
                   color={Color.DEPTH_L}
                 >
                   개발 환경을 구축한
@@ -369,7 +377,7 @@ const Home = () => {
                   02.
                 </Typography>
                 <Typography
-                  font={FontType.MEDIUM_TITLE_02}
+                  font={FontType.MEDIUM_TITLE_03}
                   color={Color.DEPTH_L}
                 >
                   테스트 및 배포 자동화
@@ -386,7 +394,7 @@ const Home = () => {
                   03.
                 </Typography>
                 <Typography
-                  font={FontType.MEDIUM_TITLE_02}
+                  font={FontType.MEDIUM_TITLE_03}
                   color={Color.DEPTH_L}
                 >
                   분산 버전 관리 시스템
@@ -400,10 +408,10 @@ const Home = () => {
         <Page4Styled>
           <Dot />
           <Page4Box>
-            <Typography font={FontType.BOLD_TITLE_01} marginBottom={28}>
+            <Typography font={FontType.BOLD_TITLE_02} marginBottom={28}>
               본캐마스터 (2021.07 ~ 2021.09)
             </Typography>
-            <Typography font={FontType.MEDIUM_TITLE_02} marginBottom={60}>
+            <Typography font={FontType.MEDIUM_TITLE_03} marginBottom={60}>
               루틴 메이커 앱 👩🏻‍💻 서비스
             </Typography>
             <Page4Tags>
@@ -486,12 +494,12 @@ const Home = () => {
                 <Page5BoxItemCircle color={Color.DEPTH_L} />
               </Page5BoxItemBar>
               <Page5BoxInfo>
-                <Typography font={FontType.SEMI_BOLD_TITLE_01}>
+                <Typography font={FontType.SEMI_BOLD_TITLE_02}>
                   42SEOUL
                 </Typography>
                 <div>
                   <Typography
-                    font={FontType.SEMI_BOLD_TITLE_02}
+                    font={FontType.SEMI_BOLD_TITLE_03}
                     marginBottom={20}
                   >
                     2020.12 ~ Current
@@ -511,12 +519,12 @@ const Home = () => {
                 <Page5BoxItemCircle color={Color.DEPTH_L} />
               </Page5BoxItemBar>
               <Page5BoxInfo>
-                <Typography font={FontType.SEMI_BOLD_TITLE_01}>
+                <Typography font={FontType.SEMI_BOLD_TITLE_02}>
                   NEXTERS
                 </Typography>
                 <div>
                   <Typography
-                    font={FontType.SEMI_BOLD_TITLE_02}
+                    font={FontType.SEMI_BOLD_TITLE_03}
                     marginBottom={20}
                   >
                     2021.07 ~ Current
@@ -536,12 +544,12 @@ const Home = () => {
                 <Page5BoxItemCircle color={Color.DEPTH_L} />
               </Page5BoxItemBar>
               <Page5BoxInfo>
-                <Typography font={FontType.SEMI_BOLD_TITLE_01}>
+                <Typography font={FontType.SEMI_BOLD_TITLE_02}>
                   DEPROMEET
                 </Typography>
                 <div>
                   <Typography
-                    font={FontType.SEMI_BOLD_TITLE_02}
+                    font={FontType.SEMI_BOLD_TITLE_03}
                     marginBottom={20}
                   >
                     2019.03 ~ 2020.12
@@ -561,12 +569,12 @@ const Home = () => {
                 <Page5BoxItemCircle color={Color.DEPTH_L} />
               </Page5BoxItemBar>
               <Page5BoxInfo>
-                <Typography font={FontType.SEMI_BOLD_TITLE_01}>
+                <Typography font={FontType.SEMI_BOLD_TITLE_02}>
                   토의스토리
                 </Typography>
                 <div>
                   <Typography
-                    font={FontType.SEMI_BOLD_TITLE_02}
+                    font={FontType.SEMI_BOLD_TITLE_03}
                     marginBottom={20}
                   >
                     2019.03 ~ 2020.12
@@ -589,16 +597,16 @@ const Home = () => {
               <br />
               Let’s do it! 😄
             </Typography>
-            <Typography font={FontType.SEMI_BOLD_TITLE_02} marginBottom={10}>
+            <Typography font={FontType.SEMI_BOLD_TITLE_03} marginBottom={10}>
               PHONE 📞
             </Typography>
-            <Typography font={FontType.LIGHT_TITLE_01} marginBottom={60}>
+            <Typography font={FontType.LIGHT_TITLE_02} marginBottom={60}>
               +82 1087837803
             </Typography>
-            <Typography font={FontType.SEMI_BOLD_TITLE_02} marginBottom={10}>
+            <Typography font={FontType.SEMI_BOLD_TITLE_03} marginBottom={10}>
               EMAIL 📬
             </Typography>
-            <Typography font={FontType.LIGHT_TITLE_01}>
+            <Typography font={FontType.LIGHT_TITLE_02}>
               bbongwa123@gmail.com
             </Typography>
           </Page6Box>
@@ -618,10 +626,8 @@ const Home = () => {
 const HomeStyled = styled.div`
   width: 700%;
   height: calc(100vh - 8.8em);
-  overflow: hidden;
   display: flex;
   padding-top: 6em;
-  border-bottom: 3px solid ${Color.DEPTH_D};
 `;
 
 const Page1Styled = styled.section`
@@ -647,6 +653,23 @@ const Page1MainTitle = styled.div`
   padding-right: 37em;
 `;
 
+const Page1SubTitle = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  left: 10em;
+  bottom: -3em;
+`;
+
+const Page1Arrow = styled.div`
+  width: 75em;
+  height: 0.25em;
+  background-color: ${Color.DEPTH_D};
+  border-radius: 4em;
+  margin-left: 4em;
+`;
+
 const Page2Styled = styled.section`
   width: 176em;
   position: relative;
@@ -656,6 +679,7 @@ const Page2Styled = styled.section`
   align-items: center;
   flex-shrink: 0;
   border-left: 3px solid ${Color.DEPTH_D};
+  border-bottom: 3px solid ${Color.DEPTH_D};
 `;
 
 const Page2Box = styled.div`
@@ -711,6 +735,7 @@ const Page3Styled = styled.section`
   align-items: center;
   flex-shrink: 0;
   border-left: 3px solid ${Color.DEPTH_D};
+  border-bottom: 3px solid ${Color.DEPTH_D};
 `;
 
 const Page3Item = styled.button<{ last?: boolean; active: boolean }>`
@@ -751,7 +776,8 @@ const Page4Styled = styled.section`
   align-items: center;
   flex-shrink: 0;
   border-left: 3px solid ${Color.DEPTH_D};
-  padding-right: 220px;
+  border-bottom: 3px solid ${Color.DEPTH_D};
+  padding-right: 22em;
 `;
 
 const Page4Box = styled.div`
@@ -797,6 +823,7 @@ const Page5Styled = styled.section`
   align-items: center;
   flex-shrink: 0;
   border-left: 3px solid ${Color.DEPTH_D};
+  border-bottom: 3px solid ${Color.DEPTH_D};
 `;
 
 const Page5Box = styled.div`
@@ -855,6 +882,7 @@ const Page6Styled = styled.section`
   align-items: center;
   flex-shrink: 0;
   border-left: 3px solid ${Color.DEPTH_D};
+  border-bottom: 3px solid ${Color.DEPTH_D};
 `;
 
 const Page6Box = styled.div`

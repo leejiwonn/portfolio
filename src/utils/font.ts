@@ -10,8 +10,9 @@ const FontSize = {
   SIZE_BIG: 8.4,
   SIZE_HEAD_01: 6.2,
   SIZE_HEAD_02: 5.0,
-  SIZE_TITLE_01: 2.6,
-  SIZE_TITLE_02: 2.2,
+  SIZE_TITLE_01: 3.6,
+  SIZE_TITLE_02: 2.6,
+  SIZE_TITLE_03: 2.2,
   SIZE_BODY_01: 1.8,
   SIZE_BODY_02: 1.4,
   SIZE_BODY_03: 1.2,
@@ -32,12 +33,14 @@ const FontType = {
 
   BOLD_TITLE_01: 'BOLD_TITLE_01',
   BOLD_TITLE_02: 'BOLD_TITLE_02',
+  BOLD_TITLE_03: 'BOLD_TITLE_03',
   BOLD_BODY_01: 'BOLD_BODY_01',
   BOLD_BODY_02: 'BOLD_BODY_02',
   BOLD_BODY_03: 'BOLD_BODY_03',
 
   SEMI_BOLD_TITLE_01: 'SEMI_BOLD_TITLE_01',
   SEMI_BOLD_TITLE_02: 'SEMI_BOLD_TITLE_02',
+  SEMI_BOLD_TITLE_03: 'SEMI_BOLD_TITLE_03',
   SEMI_BOLD_BODY_01: 'SEMI_BOLD_BODY_01',
   SEMI_BOLD_BODY_02: 'SEMI_BOLD_BODY_02',
   SEMI_BOLD_BODY_03: 'SEMI_BOLD_BODY_03',
@@ -47,6 +50,7 @@ const FontType = {
   MEDIUM_HEAD_02: 'MEDIUM_HEAD_02',
   MEDIUM_TITLE_01: 'MEDIUM_TITLE_01',
   MEDIUM_TITLE_02: 'MEDIUM_TITLE_02',
+  MEDIUM_TITLE_03: 'MEDIUM_TITLE_03',
   MEDIUM_BODY_01: 'MEDIUM_BODY_01',
   MEDIUM_BODY_02: 'MEDIUM_BODY_02',
   MEDIUM_BODY_03: 'MEDIUM_BODY_03',
@@ -55,6 +59,7 @@ const FontType = {
 
   LIGHT_TITLE_01: 'LIGHT_TITLE_01',
   LIGHT_TITLE_02: 'LIGHT_TITLE_02',
+  LIGHT_TITLE_03: 'LIGHT_TITLE_03',
   LIGHT_BODY_01: 'LIGHT_BODY_01',
   LIGHT_BODY_02: 'LIGHT_BODY_02',
   LIGHT_BODY_03: 'LIGHT_BODY_03',
@@ -101,6 +106,13 @@ namespace Font {
       case FontType.MEDIUM_TITLE_02:
       case FontType.LIGHT_TITLE_02: {
         return FontSize.SIZE_TITLE_02;
+      }
+
+      case FontType.BOLD_TITLE_03:
+      case FontType.SEMI_BOLD_TITLE_03:
+      case FontType.MEDIUM_TITLE_03:
+      case FontType.LIGHT_TITLE_03: {
+        return FontSize.SIZE_TITLE_03;
       }
 
       case FontType.BOLD_BODY_01:
@@ -150,6 +162,7 @@ namespace Font {
 
       case FontType.BOLD_TITLE_01:
       case FontType.BOLD_TITLE_02:
+      case FontType.BOLD_TITLE_03:
       case FontType.BOLD_BODY_01:
       case FontType.BOLD_BODY_02:
       case FontType.BOLD_BODY_03: {
@@ -158,6 +171,7 @@ namespace Font {
 
       case FontType.SEMI_BOLD_TITLE_01:
       case FontType.SEMI_BOLD_TITLE_02:
+      case FontType.SEMI_BOLD_TITLE_03:
       case FontType.SEMI_BOLD_BODY_01:
       case FontType.SEMI_BOLD_BODY_02:
       case FontType.SEMI_BOLD_BODY_03:
@@ -169,6 +183,7 @@ namespace Font {
       case FontType.MEDIUM_HEAD_02:
       case FontType.MEDIUM_TITLE_01:
       case FontType.MEDIUM_TITLE_02:
+      case FontType.MEDIUM_TITLE_03:
       case FontType.MEDIUM_BODY_01:
       case FontType.MEDIUM_BODY_02:
       case FontType.MEDIUM_BODY_03:
@@ -179,6 +194,7 @@ namespace Font {
 
       case FontType.LIGHT_TITLE_01:
       case FontType.LIGHT_TITLE_02:
+      case FontType.LIGHT_TITLE_03:
       case FontType.LIGHT_BODY_01:
       case FontType.LIGHT_BODY_02:
       case FontType.LIGHT_BODY_03:
