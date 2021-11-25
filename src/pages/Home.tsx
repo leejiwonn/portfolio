@@ -84,6 +84,9 @@ const Home = () => {
               src="/images/image-scroll.png"
               alt="스크롤 이미지"
             />
+            <ScrollIcon>
+              <ScrollIconWheel />
+            </ScrollIcon>
           </ScrollImageStyled>
           <Page1MainTitle className="main-title">
             <Typography font={FontType.BOLD_TITLE_01}>Hi There! 👋</Typography>
@@ -650,6 +653,9 @@ const Page1Styled = styled.section`
 `;
 
 const ScrollImageStyled = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   top: 6em;
   right: 6em;
@@ -657,6 +663,39 @@ const ScrollImageStyled = styled.div`
 
 const ScrollImage = styled.img`
   width: 18em;
+`;
+
+const ScrollIcon = styled.div`
+  width: 2.5em;
+  height: 4em;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: ${Color.POINT_O};
+  border-radius: 2em;
+`;
+
+const ScrollIconWheel = styled.div`
+  width: 1em;
+  height: 1em;
+  position: absolute;
+  top: 0.7em;
+  left: 30%;
+  background-color: ${Color.DEPTH_L};
+  border-radius: 50%;
+  animation: mouse-wheel 1.2s ease-out infinite;
+
+  @keyframes mouse-wheel {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translateY(0.8em);
+    }
+  }
 `;
 
 const Page1MainTitle = styled.div`
