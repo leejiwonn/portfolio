@@ -938,7 +938,7 @@ const PageFooter = styled.div`
   display: flex;
   align-items: center;
   position: absolute;
-  left: -0.25em;
+  left: -0.28em;
   bottom: -9em;
   padding-left: 2em;
   border-left: 3px solid ${Color.DEPTH_D};
