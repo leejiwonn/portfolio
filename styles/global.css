@@ -19,6 +19,7 @@ body {
   background-image: url('../public/images/paper.png');
   background-size: cover;
   background-position: 100% 100%;
+  background-attachment: fixed;
   background-blend-mode: luminosity;
   user-select: none;
   -ms-user-select: none;
