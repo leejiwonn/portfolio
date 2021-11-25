@@ -8,7 +8,7 @@ import Typography from '~/components/Typography';
 import Dot from '~/components/Dot';
 import Noise from '~/components/Noise';
 import { Color } from '~/utils/color';
-import { FontType } from '~/utils/font';
+import { Align, FontType } from '~/utils/font';
 
 import SpeechIcon from '../../public/icons/icon-speech.svg';
 
@@ -134,19 +134,28 @@ const Home = () => {
               </Page2SubTitleBox>
             </Page2SubTitleStyled>
             <Page2DetailInfo>
-              <Typography font={FontType.MEDIUM_TITLE_02} marginRight={200}>
+              <Typography font={FontType.MEDIUM_TITLE_02} marginBottom={20}>
                 현재,
-                <br />
-                없으면 불편할 서비스를 만드는
-                <br />
-                개발자가 되기 위해 노력중이에요!
               </Typography>
-              <Typography font={FontType.MEDIUM_TITLE_02}>
-                미래,
-                <br />
-                오래 함께하고 싶은
-                <br />
-                사람으로 기억되고 싶습니다.
+              <TypoAnimationStyled>
+                <TypoAnimationItem>
+                  {[
+                    '없으면 불편할 서비스를 만드는',
+                    '항상 사용자의 입장에서 고민하는',
+                    '사용하는 가치에서 만족을 느끼는',
+                  ].map((value, index) => (
+                    <Typography
+                      key={index}
+                      font={FontType.MEDIUM_TITLE_02}
+                      align={Align.CENTER}
+                    >
+                      {value}
+                    </Typography>
+                  ))}
+                </TypoAnimationItem>
+              </TypoAnimationStyled>
+              <Typography font={FontType.MEDIUM_TITLE_02} marginTop={20}>
+                개발자가 되기 위해 노력중이에요!
               </Typography>
             </Page2DetailInfo>
           </Page2Box>
@@ -743,27 +752,64 @@ const Page2Box = styled.div`
 
 const Page2SubTitleStyled = styled.div`
   position: absolute;
-  top: -1.2vh;
+  top: -0.5vh;
   left: 53em;
 `;
 
 const Page2SubTitleBox = styled.div`
   position: relative;
-  padding: 1.2em;
+  padding: 0.8em 1.2em;
   border-radius: 10px;
   background-color: ${Color.DEPTH_D};
 `;
 
 const SpeechIconStyled = styled.div`
   position: absolute;
-  top: 4.5em;
+  top: 3.5em;
   left: 50%;
 `;
 
 const Page2DetailInfo = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding-top: 8em;
+`;
+
+const TypoAnimationStyled = styled.div`
+  width: 36em;
+  height: 4em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 1em;
+  background-color: ${Color.POINT_B};
+  padding-top: 0.1em;
+`;
+
+const TypoAnimationItem = styled.div`
+  animation: flip 6s cubic-bezier(0.13, 0.8, 0.22, 1) infinite;
+
+  @keyframes flip {
+    0% {
+      margin-top: -7.8em;
+    }
+    20% {
+      margin-top: -7.8em;
+    }
+    40% {
+      margin-top: -3.9em;
+    }
+    60% {
+      margin-top: -3.9em;
+    }
+    80% {
+      margin-top: 0em;
+    }
+    100% {
+      margin-top: -7.8em;
+    }
+  }
 `;
 
 const Page2Deco = styled.div`
