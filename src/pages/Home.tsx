@@ -13,52 +13,79 @@ import { FontType } from '~/utils/font';
 
 import SpeechIcon from '../../public/icons/icon-speech.svg';
 
+gsap.registerPlugin(ScrollTrigger);
+
 const Home = () => {
-  const [maxWidth, setMaxWidth] = useState(0);
   const [techItem, setTechItem] = useState(0);
 
-  gsap.registerPlugin(ScrollTrigger);
-  const scrollRef = useRef<HTMLDivElement>(null);
-
   /* horizontal scroll */
-  useEffect(() => {
-    setMaxWidth(document.querySelector('.container').scrollWidth);
+  const panelsContainer = useRef<HTMLInputElement>(null);
 
-    const sections = gsap.utils.toArray('section');
-    gsap.to(sections, {
-      xPercent: -100 * (sections.length - 1),
-      ease: 'none',
+  useEffect(() => {
+    const panels: HTMLDivElement[] = gsap.utils.toArray('section');
+
+    const maxWidth = () => {
+      let max = 0;
+      panels.forEach((panel) => (max += panel.offsetWidth));
+      return max;
+    };
+
+    gsap.to(panels, {
+      x: () => -maxWidth() + window.innerWidth,
+      ease: 'ease-in',
       scrollTrigger: {
-        trigger: '.container',
-        pin: false,
+        trigger: panelsContainer.current,
+        pin: true,
         start: 'top top',
         scrub: 1,
-        end: () => '+=' + (maxWidth - window.innerWidth),
+        end: () => '+=' + panelsContainer.current?.offsetWidth,
       },
     });
   }, []);
 
-  // animation
+  /* scrolling animation */
+  const prev = useRef(0);
+  const scrolling = useRef<HTMLImageElement>(null);
+
   useEffect(() => {
-    const element = scrollRef.current;
-    gsap.fromTo(
-      element.querySelector('.main-title'),
-      {
-        opacity: 0,
-        y: -20,
-      },
-      {
-        opacity: 1,
-        y: 0,
-      },
-    );
+    const elem = scrolling.current;
+    const listener = () => {
+      if (elem == null) {
+        return;
+      }
+
+      const scrollY = window.scrollY;
+      const diff = (prev.current - scrollY) * 0.35;
+
+      const x = Number(elem.getAttribute('data-rotate') ?? '0');
+      const y = x - diff;
+
+      elem.style.transform = `rotate(${y}deg)`;
+      elem.style.transition = '0.3s ease-out';
+      elem.setAttribute('data-rotate', y.toString());
+
+      prev.current = scrollY;
+    };
+
+    window.addEventListener('scroll', listener, true);
+
+    return () => {
+      window.removeEventListener('scroll', listener, true);
+    };
   }, []);
 
   return (
     <>
       <Header />
-      <HomeStyled ref={scrollRef} className="container" maxWidth={maxWidth}>
+      <HomeStyled ref={panelsContainer}>
         <Page1Styled>
+          <ScrollImageStyled>
+            <ScrollImage
+              ref={scrolling}
+              src="/images/image-scroll.png"
+              alt="스크롤 이미지"
+            />
+          </ScrollImageStyled>
           <Page1MainTitle className="main-title">
             <Typography font={FontType.BOLD_TITLE_01}>Hi There! 👋</Typography>
             <Typography tag="h1" font={FontType.EXTRA_BOLD_BIG}>
@@ -583,13 +610,13 @@ const Home = () => {
         </EndStyled>
       </HomeStyled>
       {/* <Footer /> */}
-      <Noise maxWidth={maxWidth} />
+      <Noise />
     </>
   );
 };
 
-const HomeStyled = styled.div<{ maxWidth: number }>`
-  width: ${({ maxWidth }) => maxWidth + 'px'};
+const HomeStyled = styled.div`
+  width: 700%;
   height: calc(100vh - 8.8em);
   overflow: hidden;
   display: flex;
@@ -598,9 +625,21 @@ const HomeStyled = styled.div<{ maxWidth: number }>`
 `;
 
 const Page1Styled = styled.section`
+  width: 140em;
+  position: relative;
   display: flex;
   align-items: center;
   flex-shrink: 0;
+`;
+
+const ScrollImageStyled = styled.div`
+  position: absolute;
+  top: 6em;
+  right: 6em;
+`;
+
+const ScrollImage = styled.img`
+  width: 18em;
 `;
 
 const Page1MainTitle = styled.div`
@@ -609,6 +648,8 @@ const Page1MainTitle = styled.div`
 `;
 
 const Page2Styled = styled.section`
+  width: 176em;
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -662,6 +703,8 @@ const Page2Deco = styled.div`
 `;
 
 const Page3Styled = styled.section`
+  width: 120em;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -671,7 +714,7 @@ const Page3Styled = styled.section`
 `;
 
 const Page3Item = styled.button<{ last?: boolean; active: boolean }>`
-  width: 130em;
+  width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -700,6 +743,8 @@ const Page3ItemInfo = styled.div`
 `;
 
 const Page4Styled = styled.section`
+  width: 170em;
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -744,6 +789,8 @@ const Page4ImageView = styled.div`
 `;
 
 const Page5Styled = styled.section`
+  width: 200em;
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -799,7 +846,9 @@ const Page5BoxInfo = styled.div`
   padding-top: 10em;
 `;
 
-const Page6Styled = styled.div`
+const Page6Styled = styled.section`
+  width: 130em;
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -818,7 +867,7 @@ const Page6Box = styled.div`
 `;
 
 const EndStyled = styled.section`
-  width: 10em;
+  width: 8em;
   height: 100vh;
   display: flex;
   flex-direction: column;

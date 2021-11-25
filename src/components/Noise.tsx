@@ -1,21 +1,18 @@
 import styled from '@emotion/styled';
 
-interface Props {
-  maxWidth: number;
-}
-
-const Noise = ({ maxWidth }: Props) => {
+const Noise = () => {
   return (
-    <NoiseStyled maxWidth={maxWidth}>
-      <NoiseBox></NoiseBox>
+    <NoiseStyled>
+      <NoiseBox />
     </NoiseStyled>
   );
 };
 
-const NoiseStyled = styled.div<{ maxWidth: number }>`
-  width: ${({ maxWidth }) => maxWidth + 'px'};
+const NoiseStyled = styled.div`
+  width: 100vw;
   height: 100vh;
-  position: absolute;
+  position: fixed;
+  overflow: hidden;
   top: 0;
   left: 0;
   right: 0;
