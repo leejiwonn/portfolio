@@ -613,12 +613,6 @@ const Home = () => {
               Let’s do it! 😄
             </Typography>
             <Typography font={FontType.SEMI_BOLD_TITLE_03} marginBottom={10}>
-              PHONE 📞
-            </Typography>
-            <Typography font={FontType.LIGHT_TITLE_02} marginBottom={60}>
-              +82 1087837803
-            </Typography>
-            <Typography font={FontType.SEMI_BOLD_TITLE_03} marginBottom={10}>
               EMAIL 📬
             </Typography>
             <Typography font={FontType.LIGHT_TITLE_02}>
