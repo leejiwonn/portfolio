@@ -4,7 +4,6 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 import Header from '~/components/Header';
-// import Footer from '~/components/Footer';
 import Typography from '~/components/Typography';
 import Dot from '~/components/Dot';
 import Noise from '~/components/Noise';
@@ -155,6 +154,9 @@ const Home = () => {
             </Typography>
           </Page2Deco>
           <Dot />
+          <PageFooter>
+            <Typography font={FontType.MEDIUM_HEAD_02}>ABOUT</Typography>
+          </PageFooter>
         </Page2Styled>
         <Page3Styled>
           <Page3Item onClick={() => setTechItem(0)} active={techItem === 0}>
@@ -404,6 +406,11 @@ const Home = () => {
               </Page3ItemInfo>
             </Page3ItemBox>
           </Page3Item>
+          <PageFooter>
+            <Typography font={FontType.MEDIUM_HEAD_02}>
+              TECHS {'&'} TOOLS
+            </Typography>
+          </PageFooter>
         </Page3Styled>
         <Page4Styled>
           <Dot />
@@ -483,6 +490,9 @@ const Home = () => {
             </Page4LinkButtonStyled>
           </Page4Box>
           <Page4ImageView />
+          <PageFooter>
+            <Typography font={FontType.MEDIUM_HEAD_02}>PROJECTS</Typography>
+          </PageFooter>
         </Page4Styled>
         <Page5Styled>
           <Dot />
@@ -588,6 +598,11 @@ const Home = () => {
               </Page5BoxInfo>
             </Page5BoxItem>
           </Page5Box>
+          <PageFooter>
+            <Typography font={FontType.MEDIUM_HEAD_02}>
+              EDU {'&'} ACTIVITIES
+            </Typography>
+          </PageFooter>
         </Page5Styled>
         <Page6Styled>
           <Dot />
@@ -610,6 +625,9 @@ const Home = () => {
               bbongwa123@gmail.com
             </Typography>
           </Page6Box>
+          <PageFooter>
+            <Typography font={FontType.MEDIUM_HEAD_02}>CONTACT</Typography>
+          </PageFooter>
         </Page6Styled>
         <EndStyled>
           <LinkButton>F</LinkButton>
@@ -617,7 +635,6 @@ const Home = () => {
           <LinkButton>L</LinkButton>
         </EndStyled>
       </HomeStyled>
-      {/* <Footer /> */}
       <Noise />
     </>
   );
@@ -913,6 +930,18 @@ const LinkButton = styled.button`
   background-color: ${Color.DEPTH_L};
   border-radius: 50%;
   margin: 1em 0;
+`;
+
+const PageFooter = styled.div`
+  width: 100%;
+  height: 9em;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: -0.25em;
+  bottom: -9em;
+  padding-left: 2em;
+  border-left: 3px solid ${Color.DEPTH_D};
 `;
 
 export default Home;
