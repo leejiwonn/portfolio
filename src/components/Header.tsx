@@ -6,10 +6,12 @@ import { FontType } from '~/utils/font';
 import { getContributions } from '~/utils/api';
 import Typography from '~/components/Typography';
 import { Contribution } from '~/types/contribution';
+import useCursorHandlers from '~/hooks/useCursorHandler';
 
 const Header = () => {
   const [weekContributions, setWeekContributions] =
     useState<Contribution>(null);
+  const cursorHandlers = useCursorHandlers();
 
   /* get github contributions */
   useEffect(() => {
@@ -70,12 +72,20 @@ const Header = () => {
         </Typography>
       </GithubGrass>
       <ButtonView>
-        <LinkButton href="https://github.com/leejiwonn" target="_blank">
+        <LinkButton
+          href="https://github.com/leejiwonn"
+          target="_blank"
+          {...cursorHandlers}
+        >
           <Typography tag="span" font={FontType.SEMI_BOLD_BODY_02}>
             GITHUB
           </Typography>
         </LinkButton>
-        <LinkButton href="https://leejiwonn.tistory.com" target="_blank">
+        <LinkButton
+          href="https://leejiwonn.tistory.com"
+          target="_blank"
+          {...cursorHandlers}
+        >
           <Typography tag="span" font={FontType.SEMI_BOLD_BODY_02}>
             BLOG
           </Typography>

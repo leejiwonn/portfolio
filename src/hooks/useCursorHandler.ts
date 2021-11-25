@@ -2,32 +2,22 @@ import { useContext, useCallback } from 'react';
 
 import { CursorContext } from '~/context/CursorContextProvider';
 
-interface Props {
-  onMouseEnter: (e: MouseEvent) => void;
-  onMouseLeave: (e: MouseEvent) => void;
-}
+const useCursorHandlers = () => {
+  const [, setCursor] = useContext(CursorContext);
 
-const useCursorHandlers = ({ onMouseEnter, onMouseLeave }: Props) => {
-  const [setCursor] = useContext(CursorContext);
-
-  const toggleCursor = () => {
-    setCursor((active: boolean) => ({ active: !active }));
+  const toggleCursor = (status: boolean) => {
+    setCursor({ active: status });
   };
 
-  const handleMouseEnter = useCallback((e) => {
-    if (onMouseEnter) {
-      onMouseEnter(e);
-    }
-    toggleCursor();
+  const onMouseEnter = useCallback(() => {
+    toggleCursor(true);
   }, []);
 
-  const handleMouseLeave = useCallback((e) => {
-    if (onMouseLeave) {
-      onMouseLeave(e);
-    }
-    toggleCursor();
+  const onMouseLeave = useCallback(() => {
+    toggleCursor(false);
   }, []);
-  return { handleMouseEnter, handleMouseLeave };
+
+  return { onMouseEnter, onMouseLeave };
 };
 
 export default useCursorHandlers;

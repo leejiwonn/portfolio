@@ -4,8 +4,6 @@ import { useContext } from 'react';
 import useMousePosition from '~/hooks/useMousePosition';
 import { Color } from '~/utils/color';
 import { CursorContext } from '~/context/CursorContextProvider';
-import Typography from './Typography';
-import { FontType } from '~/utils/font';
 
 const Cursor = () => {
   const { clientX, clientY } = useMousePosition();
@@ -13,11 +11,7 @@ const Cursor = () => {
 
   return (
     <CursorStyled>
-      <CursorPointer x={clientX} y={clientY} active={cursor}>
-        <Typography font={FontType.SEMI_BOLD_CAPTION_02} color={Color.DEPTH_L}>
-          Drag!
-        </Typography>
-      </CursorPointer>
+      <CursorPointer x={clientX} y={clientY} active={cursor.active} />
     </CursorStyled>
   );
 };
@@ -33,19 +27,24 @@ const CursorStyled = styled.div`
 `;
 
 const CursorPointer = styled.div<{ x: number; y: number; active: boolean }>`
-  width: 3em;
-  height: 3em;
+  width: 2.5em;
+  height: 2.5em;
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
   left: ${({ x }) => `${x}px`};
   top: ${({ y }) => `${y}px`};
-  background-color: ${({ active }) => (active ? Color.POINT_O : Color.POINT_B)};
-  transform: ${({ active }) =>
-    `translate(-50%, -50%) scale(${active ? 2.5 : 1})`};
+  background-color: ${({ active }) => active && Color.POINT_P};
+  border: ${({ active }) =>
+    active ? 'transparent' : `2px solid ${Color.POINT_P}`};
   border-radius: 50%;
-  transition: 'transform .2s ease-in-out';
+  opacity: ${({ active }) => active && '0.5'};
+  transform: ${({ active }) =>
+    `translate(-50%, -50%) scale(${active ? 0.6 : 1})`};
+  transition: transform 0.2s ease-in-out;
+  pointer-events: none;
+  z-index: 999;
 `;
 
 export default Cursor;
