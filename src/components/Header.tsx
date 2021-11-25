@@ -4,26 +4,47 @@ import { useEffect, useState } from 'react';
 import { Color } from '~/utils/color';
 import { FontType } from '~/utils/font';
 import { getContributions } from '~/utils/api';
-import Typography from './Typography';
+import Typography from '~/components/Typography';
+import { Contribution } from '~/types/contribution';
 
 const Header = () => {
-  const [weekContributions, setWeekContributions] = useState([]);
+  const [weekContributions, setWeekContributions] =
+    useState<Contribution>(null);
 
   /* get github contributions */
   useEffect(() => {
     const fetchContributions = async () => {
       try {
         const data = await getContributions();
+        const totalContributions =
+          data.contributionsCollection.contributionCalendar.totalContributions;
         const weekData =
           data.contributionsCollection.contributionCalendar.weeks;
-        setWeekContributions(weekData[weekData.length - 1].contributionDays);
+        setWeekContributions({
+          total: totalContributions,
+          week: weekData[weekData.length - 1].contributionDays,
+        });
       } catch (e) {
         console.warn(e);
       }
     };
     fetchContributions();
   }, []);
-  console.log(7 - weekContributions.length);
+
+  const getOpacity = (color: string) => {
+    if (color === '#9be9a8') {
+      return 0.2;
+    } else if (color === '#40c463') {
+      return 0.4;
+    } else if (color === '#30a14e') {
+      return 0.7;
+    } else if (color === '#216e39') {
+      return 1;
+    } else {
+      return 0.1;
+    }
+  };
+
   return (
     <HeaderStyled>
       <Logo href="/">
@@ -32,13 +53,21 @@ const Header = () => {
         </Typography>
       </Logo>
       <GithubGrass>
-        {weekContributions.map((value, index) => (
-          <GithubGrassItem key={index} color={value.color} />
+        {weekContributions?.week.map((value, index) => (
+          <GithubGrassItem
+            key={`color-${index}`}
+            opacity={getOpacity(value.color)}
+          />
         ))}
-        {weekContributions.length < 7 &&
-          [...Array(7 - weekContributions.length)].map((index) => (
-            <GithubGrassItem key={index} color={Color.DEPTH_L} />
-          ))}
+        {weekContributions?.week.length < 7 &&
+          [...Array(7 - Number(weekContributions?.week.length))].map(
+            (_, index) => (
+              <GithubGrassItem key={`none-${index}`} color={Color.DEPTH_L} />
+            ),
+          )}
+        <Typography font={FontType.MEDIUM_BODY_03} marginLeft={100}>
+          {weekContributions?.total} contributions in 2021
+        </Typography>
       </GithubGrass>
       <ButtonView>
         <LinkButton href="https://github.com/leejiwonn" target="_blank">
@@ -74,14 +103,16 @@ const Logo = styled.a``;
 const GithubGrass = styled.div`
   display: flex;
   flex-direction: row;
+  position: relative;
 `;
 
-const GithubGrassItem = styled.div<{ color: string }>`
-  width: 2.4em;
-  height: 2.4em;
-  background-color: ${({ color }) => color};
-  border-radius: 0.8em;
-  margin: 0 0.4em;
+const GithubGrassItem = styled.div<{ color?: string; opacity?: number }>`
+  width: 1.8em;
+  height: 1.8em;
+  background-color: ${({ color }) => (color ? color : Color.DEPTH_D)};
+  opacity: ${({ opacity }) => opacity};
+  border-radius: 0.4em;
+  margin: 0 0.3em;
 `;
 
 const ButtonView = styled.div``;
