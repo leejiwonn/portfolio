@@ -41,12 +41,12 @@ const Header = () => {
           ))}
       </GithubGrass>
       <ButtonView>
-        <LinkButton href="https://github.com/leejiwonn">
+        <LinkButton href="https://github.com/leejiwonn" target="_blank">
           <Typography tag="span" font={FontType.SEMI_BOLD_BODY_02}>
             GITHUB
           </Typography>
         </LinkButton>
-        <LinkButton href="https://leejiwonn.tistory.com">
+        <LinkButton href="https://leejiwonn.tistory.com" target="_blank">
           <Typography tag="span" font={FontType.SEMI_BOLD_BODY_02}>
             BLOG
           </Typography>
