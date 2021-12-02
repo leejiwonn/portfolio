@@ -12,6 +12,7 @@ import { Align, FontType } from '~/utils/font';
 import useCursorHandlers from '~/hooks/useCursorHandler';
 
 import SpeechIcon from '../../public/icons/icon-speech.svg';
+import ArrowIcon from '../../public/icons/icon-arrow.svg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,6 +20,7 @@ const Home = () => {
   const cursorHandlers = useCursorHandlers();
 
   const [techItem, setTechItem] = useState(0);
+  const [activityItem, setActivityItem] = useState(-1);
 
   /* horizontal scroll */
   const panelsContainer = useRef<HTMLInputElement>(null);
@@ -685,7 +687,7 @@ const Home = () => {
               <br />- 푸시알림 구현을 위한 FCM 설정, Pretendard 폰트 적용
             </Typography>
             <Page4LinkButtonStyled>
-              <Page4LinkButton>
+              <Page4LinkButton {...cursorHandlers}>
                 <Typography
                   font={FontType.SEMI_BOLD_BODY_02}
                   color={Color.DEPTH_D}
@@ -693,7 +695,7 @@ const Home = () => {
                   VIEW SITE
                 </Typography>
               </Page4LinkButton>
-              <Page4LinkButton>
+              <Page4LinkButton {...cursorHandlers}>
                 <Typography
                   font={FontType.SEMI_BOLD_BODY_02}
                   color={Color.DEPTH_D}
@@ -711,7 +713,16 @@ const Home = () => {
         <Page5Styled>
           <Dot />
           <Page5Box>
-            <Page5BoxItem>
+            <Page5BoxItem
+              href="https://42seoul.kr/seoul42/main/view"
+              target="_blank"
+              {...cursorHandlers}
+              onMouseOver={() => setActivityItem(0)}
+              onMouseOut={() => setActivityItem(-1)}
+            >
+              <ArrowIconStyled active={activityItem === 0}>
+                <ArrowIcon />
+              </ArrowIconStyled>
               <Page5BoxItemBar>
                 <Page5BoxItemCircle color={Color.POINT_O} />
                 <Page5BoxItemCircle color={Color.POINT_B} />
@@ -736,7 +747,16 @@ const Home = () => {
                 </div>
               </Page5BoxInfo>
             </Page5BoxItem>
-            <Page5BoxItem>
+            <Page5BoxItem
+              href="http://teamnexters.com/"
+              target="_blank"
+              {...cursorHandlers}
+              onMouseOver={() => setActivityItem(1)}
+              onMouseOut={() => setActivityItem(-1)}
+            >
+              <ArrowIconStyled active={activityItem === 1}>
+                <ArrowIcon />
+              </ArrowIconStyled>
               <Page5BoxItemBar>
                 <Page5BoxItemCircle color={Color.POINT_O} />
                 <Page5BoxItemCircle color={Color.POINT_B} />
@@ -761,7 +781,16 @@ const Home = () => {
                 </div>
               </Page5BoxInfo>
             </Page5BoxItem>
-            <Page5BoxItem>
+            <Page5BoxItem
+              href="https://www.depromeet.com/"
+              target="_blank"
+              {...cursorHandlers}
+              onMouseOver={() => setActivityItem(2)}
+              onMouseOut={() => setActivityItem(-1)}
+            >
+              <ArrowIconStyled active={activityItem === 2}>
+                <ArrowIcon />
+              </ArrowIconStyled>
               <Page5BoxItemBar>
                 <Page5BoxItemCircle color={Color.POINT_O} />
                 <Page5BoxItemCircle color={Color.POINT_B} />
@@ -786,7 +815,16 @@ const Home = () => {
                 </div>
               </Page5BoxInfo>
             </Page5BoxItem>
-            <Page5BoxItem>
+            <Page5BoxItem
+              href="https://touistory.tistory.com/"
+              target="_blank"
+              {...cursorHandlers}
+              onMouseOver={() => setActivityItem(3)}
+              onMouseOut={() => setActivityItem(-1)}
+            >
+              <ArrowIconStyled active={activityItem === 3}>
+                <ArrowIcon />
+              </ArrowIconStyled>
               <Page5BoxItemBar>
                 <Page5BoxItemCircle color={Color.POINT_O} />
                 <Page5BoxItemCircle color={Color.POINT_B} />
@@ -1274,13 +1312,21 @@ const Page5Box = styled.div`
   margin: 0 14em;
 `;
 
-const Page5BoxItem = styled.div`
+const Page5BoxItem = styled.a`
   width: 36em;
   height: 45vh;
   position: relative;
   border: 4px solid ${Color.DEPTH_D};
   border-radius: 10px;
   margin: 0 1.5em;
+`;
+
+const ArrowIconStyled = styled.div<{ active: boolean }>`
+  position: absolute;
+  top: 7em;
+  right: 2em;
+  opacity: ${({ active }) => (active ? 1 : 0)};
+  transition: 0.2s;
 `;
 
 const Page5BoxItemBar = styled.div`
