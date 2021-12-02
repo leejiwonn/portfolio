@@ -24,6 +24,7 @@ const Home = () => {
   const cursorHandlers = useCursorHandlers();
 
   const [techItem, setTechItem] = useState(0);
+  const [projectItem, setProjectItem] = useState(0);
   const [activityItem, setActivityItem] = useState(-1);
 
   /* horizontal scroll */
@@ -634,82 +635,759 @@ const Home = () => {
         </Page3Styled>
         <Page4Styled>
           <Dot />
-          <Page4Box>
-            <Typography font={FontType.BOLD_TITLE_02} marginBottom={28}>
-              본캐마스터 (2021.07 ~ 2021.09)
-            </Typography>
-            <Typography font={FontType.MEDIUM_TITLE_03} marginBottom={60}>
-              루틴 메이커 앱 👩🏻‍💻 서비스
-            </Typography>
-            <Page4Tags>
-              <Page4TagItem>
-                <Typography font={FontType.BOLD_BODY_02} color={Color.DEPTH_L}>
-                  Typescript
-                </Typography>
-              </Page4TagItem>
-              <Page4TagItem>
-                <Typography font={FontType.BOLD_BODY_02} color={Color.DEPTH_L}>
-                  React Native
-                </Typography>
-              </Page4TagItem>
-              <Page4TagItem>
-                <Typography font={FontType.BOLD_BODY_02} color={Color.DEPTH_L}>
-                  SWR
-                </Typography>
-              </Page4TagItem>
-              <Page4TagItem>
-                <Typography font={FontType.BOLD_BODY_02} color={Color.DEPTH_L}>
-                  MobX
-                </Typography>
-              </Page4TagItem>
-              <Page4TagItem>
-                <Typography font={FontType.BOLD_BODY_02} color={Color.DEPTH_L}>
-                  Emotion
-                </Typography>
-              </Page4TagItem>
-              <Page4TagItem>
-                <Typography font={FontType.BOLD_BODY_02} color={Color.DEPTH_L}>
-                  Lottie
-                </Typography>
-              </Page4TagItem>
-              <Page4TagItem>
-                <Typography font={FontType.BOLD_BODY_02} color={Color.DEPTH_L}>
-                  day.js
-                </Typography>
-              </Page4TagItem>
-            </Page4Tags>
-            <Typography font={FontType.SEMI_BOLD_BODY_01} marginBottom={40}>
-              🔍 주요 업무 : 공동 PM 역할과 프론트엔드 개발을 담당함.
-            </Typography>
-            <Typography font={FontType.LIGHT_BODY_02}>
-              - 카카오 로그인 연동 및 리다이렉션
-              <br />
-              - 메인 화면의 테스크 리스트 뷰, 설정 페이지, 친구 초대 페이지 UI
-              및 기능 구현
-              <br />- 커스텀 텍스트, 모달, 헤더 및 상태바, Toast 메시지 컴포넌트
-              구현 및 적용
-              <br />- 푸시알림 구현을 위한 FCM 설정, Pretendard 폰트 적용
-            </Typography>
-            <Page4LinkButtonStyled>
-              <Page4LinkButton {...cursorHandlers}>
-                <Typography
-                  font={FontType.SEMI_BOLD_BODY_02}
-                  color={Color.DEPTH_D}
+          <Page4InfoStyled>
+            <Page4Navigation>
+              <Page4PrograssBarStyled>
+                <Page4State>
+                  <Typography
+                    tag="span"
+                    font={FontType.BOLD_BODY_01}
+                    marginRight={30}
+                  >
+                    0{projectItem + 1}
+                  </Typography>
+                  <Typography tag="span" font={FontType.MEDIUM_BODY_02}>
+                    / 07
+                  </Typography>
+                </Page4State>
+                <Page4PrograssBar>
+                  <Page4Prograss width={(projectItem + 1) * 14} />
+                  <Page4Background />
+                </Page4PrograssBar>
+              </Page4PrograssBarStyled>
+              <Page4ControlButtonStyled>
+                <Page4PrevButton
+                  disabled={projectItem === 0}
+                  onClick={() =>
+                    projectItem > 0 && setProjectItem((prev) => prev - 1)
+                  }
+                  {...cursorHandlers}
                 >
-                  VIEW SITE
-                </Typography>
-              </Page4LinkButton>
-              <Page4LinkButton {...cursorHandlers}>
-                <Typography
-                  font={FontType.SEMI_BOLD_BODY_02}
-                  color={Color.DEPTH_D}
+                  이전
+                </Page4PrevButton>
+                <Page4NextButton
+                  disabled={projectItem === 6}
+                  onClick={() =>
+                    projectItem < 6 && setProjectItem((prev) => prev + 1)
+                  }
+                  {...cursorHandlers}
                 >
-                  GITHUB
-                </Typography>
-              </Page4LinkButton>
-            </Page4LinkButtonStyled>
-          </Page4Box>
-          <Page4ImageView />
+                  다음
+                </Page4NextButton>
+              </Page4ControlButtonStyled>
+            </Page4Navigation>
+            <Page4BoxStyled>
+              <Page4Container index={projectItem}>
+                <Page4Box>
+                  <Page4Info>
+                    <Typography font={FontType.BOLD_TITLE_02} marginBottom={28}>
+                      FLOOM (2021.09 ~ 2021.11)
+                    </Typography>
+                    <Typography
+                      font={FontType.MEDIUM_TITLE_03}
+                      marginBottom={60}
+                    >
+                      몰입의 즐거움을 경험하다!
+                    </Typography>
+                    <Page4Tags>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          Typescript
+                        </Typography>
+                      </Page4TagItem>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          Next.js
+                        </Typography>
+                      </Page4TagItem>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          React
+                        </Typography>
+                      </Page4TagItem>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          SWR
+                        </Typography>
+                      </Page4TagItem>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          Emotion
+                        </Typography>
+                      </Page4TagItem>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          Lottie
+                        </Typography>
+                      </Page4TagItem>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          Figma
+                        </Typography>
+                      </Page4TagItem>
+                    </Page4Tags>
+                    <Page4LineStyled>
+                      <DashLineImage stroke={Color.DEPTH_D} />
+                    </Page4LineStyled>
+                    <Typography
+                      font={FontType.SEMI_BOLD_BODY_01}
+                      marginBottom={40}
+                    >
+                      🔍 주요 업무 : PM 역할과 프론트엔드 개발을 담당함.
+                    </Typography>
+                    <Typography font={FontType.LIGHT_BODY_02}>
+                      - 사용자 피드백을 바탕으로 하는 3번의 MVP 검증 과정 진행
+                      <br />- 전반적인 UI 구현 및 API 연동을 혼자 전담하여 업무
+                      수행
+                    </Typography>
+                    <Page4LinkButtonStyled>
+                      <Page4LinkButton
+                        href="https://floom.vercel.app/intro"
+                        target="_blank"
+                        {...cursorHandlers}
+                      >
+                        <Typography
+                          font={FontType.SEMI_BOLD_BODY_02}
+                          color={Color.DEPTH_D}
+                        >
+                          Website
+                        </Typography>
+                      </Page4LinkButton>
+                    </Page4LinkButtonStyled>
+                  </Page4Info>
+                </Page4Box>
+                <Page4Box>
+                  <Page4Info>
+                    <Typography font={FontType.BOLD_TITLE_02} marginBottom={28}>
+                      본캐마스터 (2021.07 ~ 2021.09)
+                    </Typography>
+                    <Typography
+                      font={FontType.MEDIUM_TITLE_03}
+                      marginBottom={60}
+                    >
+                      루틴 메이커 앱 👩🏻‍💻 서비스
+                    </Typography>
+                    <Page4Tags>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          Typescript
+                        </Typography>
+                      </Page4TagItem>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          React Native
+                        </Typography>
+                      </Page4TagItem>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          SWR
+                        </Typography>
+                      </Page4TagItem>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          MobX
+                        </Typography>
+                      </Page4TagItem>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          Emotion
+                        </Typography>
+                      </Page4TagItem>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          Lottie
+                        </Typography>
+                      </Page4TagItem>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          FCM
+                        </Typography>
+                      </Page4TagItem>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          Figma
+                        </Typography>
+                      </Page4TagItem>
+                    </Page4Tags>
+                    <Page4LineStyled>
+                      <DashLineImage stroke={Color.DEPTH_D} />
+                    </Page4LineStyled>
+                    <Typography
+                      font={FontType.SEMI_BOLD_BODY_01}
+                      marginBottom={40}
+                    >
+                      🔍 주요 업무 : 공동 PM 역할과 프론트엔드 개발을 담당함.
+                    </Typography>
+                    <Typography font={FontType.LIGHT_BODY_02}>
+                      - 카카오 로그인 연동 및 리다이렉션
+                      <br />
+                      - 메인 화면의 테스크 리스트 뷰, 설정 페이지, 친구 초대
+                      페이지 UI 및 기능 구현
+                      <br />- 커스텀 텍스트, 모달, 헤더 및 상태바, Toast 메시지
+                      컴포넌트 구현 및 적용
+                      <br />- 푸시알림 구현을 위한 FCM 설정, Pretendard 폰트
+                      적용
+                    </Typography>
+                    <Page4LinkButtonStyled>
+                      <Page4LinkButton
+                        href="https://play.google.com/store/apps/details?id=com.routine"
+                        target="_blank"
+                        {...cursorHandlers}
+                      >
+                        <Typography
+                          font={FontType.SEMI_BOLD_BODY_02}
+                          color={Color.DEPTH_D}
+                        >
+                          Android
+                        </Typography>
+                      </Page4LinkButton>
+                      <Page4LinkButton
+                        href="https://github.com/Nexters/gamsung-routine-front"
+                        target="_blank"
+                        {...cursorHandlers}
+                      >
+                        <Typography
+                          font={FontType.SEMI_BOLD_BODY_02}
+                          color={Color.DEPTH_D}
+                        >
+                          Github
+                        </Typography>
+                      </Page4LinkButton>
+                    </Page4LinkButtonStyled>
+                  </Page4Info>
+                </Page4Box>
+                <Page4Box>
+                  <Page4Info>
+                    <Typography font={FontType.BOLD_TITLE_02} marginBottom={28}>
+                      작업공간 : v2 (2021.01 ~ 현재)
+                    </Typography>
+                    <Typography
+                      font={FontType.MEDIUM_TITLE_03}
+                      marginBottom={60}
+                    >
+                      작업하기 좋은 주변 카페 추천 앱 서비스
+                    </Typography>
+                    <Page4Tags>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          Javascript
+                        </Typography>
+                      </Page4TagItem>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          React Native
+                        </Typography>
+                      </Page4TagItem>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          SWR
+                        </Typography>
+                      </Page4TagItem>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          Emotion
+                        </Typography>
+                      </Page4TagItem>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          Zeplin
+                        </Typography>
+                      </Page4TagItem>
+                    </Page4Tags>
+                    <Page4LineStyled>
+                      <DashLineImage stroke={Color.DEPTH_D} />
+                    </Page4LineStyled>
+                    <Typography
+                      font={FontType.SEMI_BOLD_BODY_01}
+                      marginBottom={40}
+                    >
+                      🔍 주요 업무 : 로그인 및 상세 화면 UI 및 기능 구현을
+                      담당함.
+                    </Typography>
+                    <Typography font={FontType.LIGHT_BODY_02}>
+                      - 카카오 로그인 구현
+                      <br />
+                      - 로그인 화면의 사용자 프로필 이미지 변경, 닉네임 변경,
+                      선호 태그 선택 기능 구현
+                      <br />- 상세 화면의 UI 및 기능 구현 (카페 정보 표시,
+                      좋아요 및 북마크 기능, 태그 및 댓글 등록 기능)
+                      <br />- 페이스북 이미지 형태의 그리드 컴포넌트, 모달 및
+                      슬라이드 기능 구현
+                    </Typography>
+                    <Page4LinkButtonStyled>
+                      <Page4LinkButton
+                        href="https://play.google.com/store/apps/details?id=com.yonghochoi.nomadcafeapp"
+                        target="_blank"
+                        {...cursorHandlers}
+                      >
+                        <Typography
+                          font={FontType.SEMI_BOLD_BODY_02}
+                          color={Color.DEPTH_D}
+                        >
+                          Android
+                        </Typography>
+                      </Page4LinkButton>
+                      <Page4LinkButton
+                        href="https://github.com/working-space/working-space-react-native"
+                        target="_blank"
+                        {...cursorHandlers}
+                      >
+                        <Typography
+                          font={FontType.SEMI_BOLD_BODY_02}
+                          color={Color.DEPTH_D}
+                        >
+                          Github
+                        </Typography>
+                      </Page4LinkButton>
+                    </Page4LinkButtonStyled>
+                  </Page4Info>
+                </Page4Box>
+                <Page4Box>
+                  <Page4Info>
+                    <Typography font={FontType.BOLD_TITLE_02} marginBottom={28}>
+                      Matching42 (2021.03 ~ 현재)
+                    </Typography>
+                    <Typography
+                      font={FontType.MEDIUM_TITLE_03}
+                      marginBottom={60}
+                    >
+                      42 Seoul 카뎃을 대상으로 하는 스터디 매칭 웹 서비스
+                    </Typography>
+                    <Page4Tags>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          Javascript
+                        </Typography>
+                      </Page4TagItem>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          React
+                        </Typography>
+                      </Page4TagItem>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          SWR
+                        </Typography>
+                      </Page4TagItem>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          styled-components
+                        </Typography>
+                      </Page4TagItem>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          Github Action
+                        </Typography>
+                      </Page4TagItem>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          AWS S3 / EC2
+                        </Typography>
+                      </Page4TagItem>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          Adobe XD
+                        </Typography>
+                      </Page4TagItem>
+                    </Page4Tags>
+                    <Page4LineStyled>
+                      <DashLineImage stroke={Color.DEPTH_D} />
+                    </Page4LineStyled>
+                    <Typography
+                      font={FontType.SEMI_BOLD_BODY_01}
+                      marginBottom={40}
+                    >
+                      🔍 주요 업무 : 팀 내 프론트엔드 개발 리더 역할로, 전반적인
+                      프론트엔드 개발 상황을 파악하고 관리하는 역할을 담당함.
+                    </Typography>
+                    <Typography font={FontType.LIGHT_BODY_02}>
+                      - 프로젝트 환경셋팅 및 역할 분담 관리, 분기별 리팩토링
+                      담당 (전반적인 UI 및 기능 개선)
+                      <br />- 프로젝트 배포 및 자동화 (CI/CD) 설정
+                    </Typography>
+                    <Page4LinkButtonStyled>
+                      <Page4LinkButton
+                        href="https://matching42.com"
+                        target="_blank"
+                        {...cursorHandlers}
+                      >
+                        <Typography
+                          font={FontType.SEMI_BOLD_BODY_02}
+                          color={Color.DEPTH_D}
+                        >
+                          Website
+                        </Typography>
+                      </Page4LinkButton>
+                      <Page4LinkButton
+                        href="https://github.com/Matching42/Matching42-front"
+                        target="_blank"
+                        {...cursorHandlers}
+                      >
+                        <Typography
+                          font={FontType.SEMI_BOLD_BODY_02}
+                          color={Color.DEPTH_D}
+                        >
+                          Github
+                        </Typography>
+                      </Page4LinkButton>
+                    </Page4LinkButtonStyled>
+                  </Page4Info>
+                </Page4Box>
+                <Page4Box>
+                  <Page4Info>
+                    <Typography font={FontType.BOLD_TITLE_02} marginBottom={28}>
+                      RNDOC (2021.04 ~ 2021.05)
+                    </Typography>
+                    <Typography
+                      font={FontType.MEDIUM_TITLE_03}
+                      marginBottom={60}
+                    >
+                      리액트 네이티브 스터디에서 출발한 공식 문서 한글 번역 앱
+                      서비스
+                    </Typography>
+                    <Page4Tags>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          React Native
+                        </Typography>
+                      </Page4TagItem>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          Expo
+                        </Typography>
+                      </Page4TagItem>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          Emotion
+                        </Typography>
+                      </Page4TagItem>
+                    </Page4Tags>
+                    <Page4LineStyled>
+                      <DashLineImage stroke={Color.DEPTH_D} />
+                    </Page4LineStyled>
+                    <Typography
+                      font={FontType.SEMI_BOLD_BODY_01}
+                      marginBottom={40}
+                    >
+                      🔍 주요 업무 : 스터디를 개설하고 운영했기 때문에
+                      자연스럽게 프로젝트 팀장 역할을 수행함. PM 및 디자인,
+                      프론트엔드 개발을 담당함.
+                    </Typography>
+                    <Typography font={FontType.LIGHT_BODY_02}>
+                      - 프로젝트 환경셋팅과 구조 설계, 디자인 및 전반적인 UI
+                      구현을 담당함.
+                      <br />- 햄버거 메뉴 기능 구현을 담당함.
+                    </Typography>
+                    <Page4LinkButtonStyled>
+                      <Page4LinkButton
+                        href="https://play.google.com/store/apps/details?id=com.hyuna.rnproject"
+                        target="_blank"
+                        {...cursorHandlers}
+                      >
+                        <Typography
+                          font={FontType.SEMI_BOLD_BODY_02}
+                          color={Color.DEPTH_D}
+                        >
+                          Android
+                        </Typography>
+                      </Page4LinkButton>
+                      <Page4LinkButton
+                        href="https://fnd.io/#/kr/ios-universal-app/1570059041-rndoc-by-minsung-kim"
+                        target="_blank"
+                        {...cursorHandlers}
+                      >
+                        <Typography
+                          font={FontType.SEMI_BOLD_BODY_02}
+                          color={Color.DEPTH_D}
+                        >
+                          iOS
+                        </Typography>
+                      </Page4LinkButton>
+                      <Page4LinkButton
+                        href="https://github.com/React-Native-docs/React-Native-docs"
+                        target="_blank"
+                        {...cursorHandlers}
+                      >
+                        <Typography
+                          font={FontType.SEMI_BOLD_BODY_02}
+                          color={Color.DEPTH_D}
+                        >
+                          Github
+                        </Typography>
+                      </Page4LinkButton>
+                    </Page4LinkButtonStyled>
+                  </Page4Info>
+                </Page4Box>
+                <Page4Box>
+                  <Page4Info>
+                    <Typography font={FontType.BOLD_TITLE_02} marginBottom={28}>
+                      Yanolja Renewal Project (2020.03 ~ 2020.06)
+                    </Typography>
+                    <Typography
+                      font={FontType.MEDIUM_TITLE_03}
+                      marginBottom={60}
+                    >
+                      국내 숙박 어플리케이션 야놀자 UX 개선 프로젝트
+                    </Typography>
+                    <Page4Tags>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          HTML/CSS
+                        </Typography>
+                      </Page4TagItem>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          Javascript
+                        </Typography>
+                      </Page4TagItem>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          GSAP
+                        </Typography>
+                      </Page4TagItem>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          Scroll Magic
+                        </Typography>
+                      </Page4TagItem>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          Adobe XD
+                        </Typography>
+                      </Page4TagItem>
+                    </Page4Tags>
+                    <Page4LineStyled>
+                      <DashLineImage stroke={Color.DEPTH_D} />
+                    </Page4LineStyled>
+                    <Typography
+                      font={FontType.SEMI_BOLD_BODY_01}
+                      marginBottom={40}
+                    >
+                      🔍 주요 업무 : 서비스 기획 및 랜딩페이지 제작 역할을
+                      담당함.
+                    </Typography>
+                    <Typography font={FontType.LIGHT_BODY_02}>
+                      - UX 분석에 따른 아이디어 도출 및 인터뷰 진행
+                      <br />
+                      - A/B 테스트 화면 와이어프레임 제작
+                      <br />- 서비스소개 웹 사이트 UI 및 스크롤 애니메이션 구현
+                    </Typography>
+                    <Page4LinkButtonStyled>
+                      <Page4LinkButton
+                        href="https://leejiwonn.github.io/yanolja/"
+                        target="_blank"
+                        {...cursorHandlers}
+                      >
+                        <Typography
+                          font={FontType.SEMI_BOLD_BODY_02}
+                          color={Color.DEPTH_D}
+                        >
+                          Website
+                        </Typography>
+                      </Page4LinkButton>
+                    </Page4LinkButtonStyled>
+                  </Page4Info>
+                </Page4Box>
+                <Page4Box>
+                  <Page4Info>
+                    <Typography font={FontType.BOLD_TITLE_02} marginBottom={28}>
+                      Radi (2020.03 ~ 2020.06)
+                    </Typography>
+                    <Typography
+                      font={FontType.MEDIUM_TITLE_03}
+                      marginBottom={60}
+                    >
+                      주의력결핍장애 아동을 위한 인공지능 멘탈 헬스케어 서비스
+                    </Typography>
+                    <Page4Tags>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          HTML/CSS
+                        </Typography>
+                      </Page4TagItem>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          Javascript
+                        </Typography>
+                      </Page4TagItem>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          GSAP
+                        </Typography>
+                      </Page4TagItem>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          Scroll Magic
+                        </Typography>
+                      </Page4TagItem>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          SpeechRecongnition API
+                        </Typography>
+                      </Page4TagItem>
+                      <Page4TagItem>
+                        <Typography
+                          font={FontType.BOLD_BODY_02}
+                          color={Color.DEPTH_L}
+                        >
+                          Adobe XD
+                        </Typography>
+                      </Page4TagItem>
+                    </Page4Tags>
+                    <Page4LineStyled>
+                      <DashLineImage stroke={Color.DEPTH_D} />
+                    </Page4LineStyled>
+                    <Typography
+                      font={FontType.SEMI_BOLD_BODY_01}
+                      marginBottom={40}
+                    >
+                      🔍 주요 업무 : 서비스 기획 및 랜딩페이지 제작을 담당함.
+                    </Typography>
+                    <Typography font={FontType.LIGHT_BODY_02}>
+                      - 연구계획서 작성, 사용자 분석 및 그에 따른 기능 도출
+                      <br />
+                      - 서비스소개 웹 사이트 UI 및 스크롤 애니메이션 구현
+                      <br />- 음성인식에 따른 동작 기능 구현
+                    </Typography>
+                    <Page4LinkButtonStyled>
+                      <Page4LinkButton
+                        href="https://leejiwonn.github.io/radi"
+                        target="_blank"
+                        {...cursorHandlers}
+                      >
+                        <Typography
+                          font={FontType.SEMI_BOLD_BODY_02}
+                          color={Color.DEPTH_D}
+                        >
+                          Website
+                        </Typography>
+                      </Page4LinkButton>
+                    </Page4LinkButtonStyled>
+                  </Page4Info>
+                </Page4Box>
+              </Page4Container>
+            </Page4BoxStyled>
+          </Page4InfoStyled>
           <PageFooter>
             <Typography font={FontType.MEDIUM_HEAD_02}>PROJECTS</Typography>
           </PageFooter>
@@ -1237,10 +1915,6 @@ const Page3LineStyled = styled.div<{ active: boolean }>`
   display: ${({ active }) => (!active ? 'none' : 'flex')};
 `;
 
-const Page3Line = styled.img`
-  width: 100%;
-`;
-
 const Page3ItemBox = styled.div<{ active: boolean }>`
   width: 100%;
   height: ${({ active }) => (active ? '48vh' : 0)};
@@ -1285,12 +1959,120 @@ const Page4Styled = styled.section`
   padding-right: 22em;
 `;
 
-const Page4Box = styled.div`
+const Page4InfoStyled = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  position: relative;
   padding-left: 14em;
+`;
+
+const Page4Navigation = styled.div`
+  width: 90%;
+  position: absolute;
+  top: -3.2em;
+  left: 10%;
+  z-index: 999;
+`;
+
+const Page4PrograssBarStyled = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+`;
+
+const Page4State = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-bottom: 0.5em;
+`;
+
+const Page4PrograssBar = styled.div`
+  width: 55%;
+  height: 0.25em;
+  position: relative;
+  overflow: hidden;
+`;
+
+const Page4Prograss = styled.div<{ width: number }>`
+  width: ${({ width }) => width + '%'};
+  height: 0.25em;
+  position: absolute;
+  left: 0;
+  background-color: ${Color.DEPTH_D};
+  transition: 0.2s;
+`;
+
+const Page4Background = styled.div`
+  width: 100%;
+  height: 0.25em;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: ${Color.DEPTH_D};
+  opacity: 0.2;
+`;
+
+const Page4ControlButtonStyled = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  bottom: 0.5em;
+`;
+
+const Page4PrevButton = styled.button<{ disabled: boolean }>`
+  padding: 0.5em;
+  opacity: ${({ disabled }) => disabled && 0.4};
+`;
+
+const Page4NextButton = styled.button<{ disabled: boolean }>`
+  padding: 0.5em;
+  opacity: ${({ disabled }) => disabled && 0.4};
+`;
+
+const Page4BoxStyled = styled.div`
+  width: 100%;
+  height: 45em;
+  position: relative;
+  overflow: hidden;
+`;
+
+const Page4Container = styled.div<{ index: number }>`
+  width: 100%;
+  height: auto;
+  margin-top: ${({ index }) => index * -45 + 'em'};
+`;
+
+const Page4Box = styled.div`
+  width: 100%;
+  height: 45em;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+`;
+
+const Page4Info = styled.div`
+  width: 55%;
+  margin-top: 3em;
 `;
 
 const Page4Tags = styled.div`
   margin-bottom: 3em;
+`;
+
+const Page4LineStyled = styled.div`
+  width: 100%;
+  margin-bottom: 3em;
+
+  svg {
+    width: 100%;
+  }
 `;
 
 const Page4TagItem = styled.div`
@@ -1305,19 +2087,20 @@ const Page4LinkButtonStyled = styled.div`
   margin-top: 3em;
 `;
 
-const Page4LinkButton = styled.button`
+const Page4LinkButton = styled.a`
+  display: inline-flex;
   padding: 0.5em 1em;
   border-radius: 40px;
   border: 3px solid ${Color.DEPTH_D};
   margin-right: 0.8em;
 `;
 
-const Page4ImageView = styled.div`
-  width: 60em;
-  height: 40em;
-  background-color: ${Color.DEPTH_D};
-  margin-left: 6em;
-`;
+// const Page4ImageView = styled.div`
+//   width: 50%;
+//   height: 40em;
+//   background-color: ${Color.DEPTH_D};
+//   margin-left: 6em;
+// `;
 
 const Page5Styled = styled.section`
   width: 200em;

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="27.242" height="27.243" viewBox="0 0 27.242 27.243">
-  <g id="그룹_24" data-name="그룹 24" transform="translate(-7793.379 -192.379)">
-    <path id="패스_4" data-name="패스 4" d="M15856.988,6598.791v-23.765h-23.214" transform="translate(-8038 -6381)" fill="none" stroke="#313c41" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
-    <line id="선_33" data-name="선 33" y1="23" x2="23" transform="translate(7795.5 194.5)" fill="none" stroke="#313c41" stroke-linecap="round" stroke-width="3"/>
+  <g id="그룹_24" transform="translate(-7793.379 -192.379)">
+    <path id="패스_4" d="M15856.988,6598.791v-23.765h-23.214" transform="translate(-8038 -6381)" fill="none" stroke="#313c41" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+    <line id="선_33" y1="23" x2="23" transform="translate(7795.5 194.5)" fill="none" stroke="#313c41" stroke-linecap="round" stroke-width="3"/>
   </g>
 </svg>
