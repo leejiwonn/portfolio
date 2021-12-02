@@ -9,12 +9,15 @@ import Dot from '~/components/Dot';
 import Noise from '~/components/Noise';
 import { Color } from '~/utils/color';
 import { Align, FontType } from '~/utils/font';
+import useCursorHandlers from '~/hooks/useCursorHandler';
 
 import SpeechIcon from '../../public/icons/icon-speech.svg';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
+  const cursorHandlers = useCursorHandlers();
+
   const [techItem, setTechItem] = useState(0);
 
   /* horizontal scroll */
@@ -108,11 +111,35 @@ const Home = () => {
         <Page2Styled>
           <Dot />
           <Page2Box>
-            <Typography font={FontType.EXTRA_BOLD_HEAD_02}>
-              만나서 반가워요!
-              <br />
-              활발하고 긍정적인 개발자 이지원입니다 😆
-            </Typography>
+            <Page2TitleInfo>
+              <Typography font={FontType.EXTRA_BOLD_HEAD_02}>
+                만나서 반가워요!
+              </Typography>
+              <Page2TitleBigStyled>
+                <BigTypoAnimationStyled>
+                  <TypoAnimationItem length={5}>
+                    {[
+                      '활발하고 긍정적인',
+                      '사용자 경험 개선에 관심이 많은',
+                      '누구보다 꼼꼼하게 정리/점검하는',
+                      '끝까지 파고 드는 것을 좋아하는',
+                      '솔직하고 적극적으로 발언하는',
+                    ].map((value, index) => (
+                      <Typography
+                        key={index}
+                        font={FontType.EXTRA_BOLD_HEAD_02}
+                        align={Align.CENTER}
+                      >
+                        {value}
+                      </Typography>
+                    ))}
+                  </TypoAnimationItem>
+                </BigTypoAnimationStyled>
+                <Typography font={FontType.EXTRA_BOLD_HEAD_02} marginLeft={20}>
+                  개발자 이지원 😆 입니다.
+                </Typography>
+              </Page2TitleBigStyled>
+            </Page2TitleInfo>
             <Page2SubTitleStyled>
               <Typography
                 font={FontType.MEDIUM_BODY_03}
@@ -133,31 +160,60 @@ const Home = () => {
                 </SpeechIconStyled>
               </Page2SubTitleBox>
             </Page2SubTitleStyled>
-            <Page2DetailInfo>
-              <Typography font={FontType.MEDIUM_TITLE_02} marginBottom={20}>
-                현재,
-              </Typography>
-              <TypoAnimationStyled>
-                <TypoAnimationItem>
-                  {[
-                    '없으면 불편할 서비스를 만드는',
-                    '항상 사용자의 입장에서 고민하는',
-                    '사용하는 가치에서 만족을 느끼는',
-                  ].map((value, index) => (
-                    <Typography
-                      key={index}
-                      font={FontType.MEDIUM_TITLE_02}
-                      align={Align.CENTER}
-                    >
-                      {value}
-                    </Typography>
-                  ))}
-                </TypoAnimationItem>
-              </TypoAnimationStyled>
-              <Typography font={FontType.MEDIUM_TITLE_02} marginTop={20}>
-                개발자가 되기 위해 노력중이에요!
-              </Typography>
-            </Page2DetailInfo>
+            <Page2DetailInfoStyled>
+              <Page2DetailInfo>
+                <Typography font={FontType.MEDIUM_TITLE_02} marginBottom={20}>
+                  현재,
+                </Typography>
+                <TypoAnimationStyled>
+                  <TypoAnimationItem length={3}>
+                    {[
+                      '항상 사용자의 입장에서 고민하는',
+                      '사용하는 가치에서 만족을 느끼는',
+                      '없으면 불편할 서비스를 만드는',
+                    ].map((value, index) => (
+                      <Typography
+                        key={index}
+                        font={FontType.MEDIUM_TITLE_02}
+                        align={Align.CENTER}
+                      >
+                        {value}
+                      </Typography>
+                    ))}
+                  </TypoAnimationItem>
+                </TypoAnimationStyled>
+                <Typography font={FontType.MEDIUM_TITLE_02} marginTop={20}>
+                  개발자가 되기 위해 노력중이에요!
+                </Typography>
+              </Page2DetailInfo>
+              <Page2DetailInfo>
+                <Typography font={FontType.MEDIUM_TITLE_02} marginBottom={20}>
+                  미래,
+                </Typography>
+                <TypoAnimationStyled>
+                  <TypoAnimationItem length={5}>
+                    {[
+                      '오래 함께하고 싶은',
+                      '타인에게 좋은 자극을 주는',
+                      '걱정 없이 기댈 수 있는',
+                      '어제보다 오늘 더 발전하는',
+                      '가능성을 만들어내는',
+                    ].map((value, index) => (
+                      <Typography
+                        key={index}
+                        font={FontType.MEDIUM_TITLE_02}
+                        align={Align.CENTER}
+                      >
+                        {value}
+                      </Typography>
+                    ))}
+                  </TypoAnimationItem>
+                </TypoAnimationStyled>
+                <Typography font={FontType.MEDIUM_TITLE_02} marginTop={20}>
+                  사람으로 기억되고 싶습니다.
+                </Typography>
+              </Page2DetailInfo>
+            </Page2DetailInfoStyled>
           </Page2Box>
           <Page2Deco>
             <Typography font={FontType.BOLD_BODY_01}>365 KM</Typography>
@@ -171,13 +227,21 @@ const Home = () => {
           </PageFooter>
         </Page2Styled>
         <Page3Styled>
-          <Page3Item onClick={() => setTechItem(0)} active={techItem === 0}>
+          <Page3Item
+            onClick={() => setTechItem(0)}
+            active={techItem === 0}
+            {...(techItem !== 0 && cursorHandlers)}
+          >
             <Typography
               font={FontType.SEMI_BOLD_TITLE_02}
               color={techItem === 0 ? Color.DEPTH_L : Color.DEPTH_D}
+              marginBottom={50}
             >
               HTML5/CSS3
             </Typography>
+            <Page3LineStyled active={techItem === 0}>
+              <Page3Line src="/images/image-dash-line.png" />
+            </Page3LineStyled>
             <Page3ItemBox active={techItem === 0}>
               <Page3ItemInfo>
                 <Typography
@@ -194,6 +258,11 @@ const Home = () => {
                   시맨틱 마크업을 준수하며,
                   <br />웹 표준을 지키고자 노력합니다.
                 </Typography>
+                <Page3ItemTagStyled>
+                  <Page3ItemTag>
+                    <Typography font={FontType.BOLD_BODY_02}>Web</Typography>
+                  </Page3ItemTag>
+                </Page3ItemTagStyled>
               </Page3ItemInfo>
               <Page3ItemInfo>
                 <Typography
@@ -211,6 +280,18 @@ const Home = () => {
                   <br />
                   활용할 수 있습니다.
                 </Typography>
+                <Page3ItemTagStyled>
+                  <Page3ItemTag>
+                    <Typography font={FontType.BOLD_BODY_02}>
+                      Emotion
+                    </Typography>
+                  </Page3ItemTag>
+                  <Page3ItemTag>
+                    <Typography font={FontType.BOLD_BODY_02}>
+                      styled-components
+                    </Typography>
+                  </Page3ItemTag>
+                </Page3ItemTagStyled>
               </Page3ItemInfo>
               <Page3ItemInfo>
                 <Typography
@@ -228,16 +309,31 @@ const Home = () => {
                   <br />
                   지원할 수 있습니다.
                 </Typography>
+                <Page3ItemTagStyled>
+                  <Page3ItemTag>
+                    <Typography font={FontType.BOLD_BODY_02}>
+                      Media Query
+                    </Typography>
+                  </Page3ItemTag>
+                </Page3ItemTagStyled>
               </Page3ItemInfo>
             </Page3ItemBox>
           </Page3Item>
-          <Page3Item onClick={() => setTechItem(1)} active={techItem === 1}>
+          <Page3Item
+            onClick={() => setTechItem(1)}
+            active={techItem === 1}
+            {...(techItem !== 1 && cursorHandlers)}
+          >
             <Typography
               font={FontType.SEMI_BOLD_TITLE_02}
               color={techItem === 1 ? Color.DEPTH_L : Color.DEPTH_D}
+              marginBottom={50}
             >
               JAVASCRIPT (ES6+)
             </Typography>
+            <Page3LineStyled active={techItem === 1}>
+              <Page3Line src="/images/image-dash-line.png" />
+            </Page3LineStyled>
             <Page3ItemBox active={techItem === 1}>
               <Page3ItemInfo>
                 <Typography
@@ -255,6 +351,13 @@ const Home = () => {
                   <br />
                   자바스크립트 문법에 익숙합니다.
                 </Typography>
+                <Page3ItemTagStyled>
+                  <Page3ItemTag>
+                    <Typography font={FontType.BOLD_BODY_02}>
+                      Javascript (ES6+)
+                    </Typography>
+                  </Page3ItemTag>
+                </Page3ItemTagStyled>
               </Page3ItemInfo>
               <Page3ItemInfo>
                 <Typography
@@ -268,10 +371,17 @@ const Home = () => {
                   font={FontType.MEDIUM_TITLE_03}
                   color={Color.DEPTH_L}
                 >
-                  타입스크립트를 이용한
+                  자바스크립트
                   <br />
-                  자바스크립트 정적 타입 분석 경험이 있습니다.
+                  정적 타입 분석 경험이 있습니다.
                 </Typography>
+                <Page3ItemTagStyled>
+                  <Page3ItemTag>
+                    <Typography font={FontType.BOLD_BODY_02}>
+                      Typescript
+                    </Typography>
+                  </Page3ItemTag>
+                </Page3ItemTagStyled>
               </Page3ItemInfo>
               <Page3ItemInfo>
                 <Typography
@@ -289,16 +399,31 @@ const Home = () => {
                   <br />
                   개발 경험이 있습니다.
                 </Typography>
+                <Page3ItemTagStyled>
+                  <Page3ItemTag>
+                    <Typography font={FontType.BOLD_BODY_02}>
+                      Next.js
+                    </Typography>
+                  </Page3ItemTag>
+                </Page3ItemTagStyled>
               </Page3ItemInfo>
             </Page3ItemBox>
           </Page3Item>
-          <Page3Item onClick={() => setTechItem(2)} active={techItem === 2}>
+          <Page3Item
+            onClick={() => setTechItem(2)}
+            active={techItem === 2}
+            {...(techItem !== 2 && cursorHandlers)}
+          >
             <Typography
               font={FontType.SEMI_BOLD_TITLE_02}
               color={techItem === 2 ? Color.DEPTH_L : Color.DEPTH_D}
+              marginBottom={50}
             >
               REACT
             </Typography>
+            <Page3LineStyled active={techItem === 2}>
+              <Page3Line src="/images/image-dash-line.png" />
+            </Page3LineStyled>
             <Page3ItemBox active={techItem === 2}>
               <Page3ItemInfo>
                 <Typography
@@ -316,6 +441,16 @@ const Home = () => {
                   <br />
                   리액트 훅을 주로 사용합니다.
                 </Typography>
+                <Page3ItemTagStyled>
+                  <Page3ItemTag>
+                    <Typography font={FontType.BOLD_BODY_02}>React</Typography>
+                  </Page3ItemTag>
+                  <Page3ItemTag>
+                    <Typography font={FontType.BOLD_BODY_02}>
+                      React Hooks
+                    </Typography>
+                  </Page3ItemTag>
+                </Page3ItemTagStyled>
               </Page3ItemInfo>
               <Page3ItemInfo>
                 <Typography
@@ -333,6 +468,14 @@ const Home = () => {
                   <br />
                   사용 경험이 있습니다.
                 </Typography>
+                <Page3ItemTagStyled>
+                  <Page3ItemTag>
+                    <Typography font={FontType.BOLD_BODY_02}>MobX</Typography>
+                  </Page3ItemTag>
+                  <Page3ItemTag>
+                    <Typography font={FontType.BOLD_BODY_02}>Redux</Typography>
+                  </Page3ItemTag>
+                </Page3ItemTagStyled>
               </Page3ItemInfo>
               <Page3ItemInfo>
                 <Typography
@@ -350,6 +493,13 @@ const Home = () => {
                   <br />
                   개발 경험이 있습니다.
                 </Typography>
+                <Page3ItemTagStyled>
+                  <Page3ItemTag>
+                    <Typography font={FontType.BOLD_BODY_02}>
+                      React Native
+                    </Typography>
+                  </Page3ItemTag>
+                </Page3ItemTagStyled>
               </Page3ItemInfo>
             </Page3ItemBox>
           </Page3Item>
@@ -357,13 +507,18 @@ const Home = () => {
             onClick={() => setTechItem(3)}
             last={true}
             active={techItem === 3}
+            {...(techItem !== 3 && cursorHandlers)}
           >
             <Typography
               font={FontType.SEMI_BOLD_TITLE_02}
               color={techItem === 3 ? Color.DEPTH_L : Color.DEPTH_D}
+              marginBottom={50}
             >
               TOOLING
             </Typography>
+            <Page3LineStyled active={techItem === 3}>
+              <Page3Line src="/images/image-dash-line.png" />
+            </Page3LineStyled>
             <Page3ItemBox active={techItem === 3}>
               <Page3ItemInfo>
                 <Typography
@@ -381,6 +536,24 @@ const Home = () => {
                   <br />
                   경험이 있습니다.
                 </Typography>
+                <Page3ItemTagStyled>
+                  <Page3ItemTag>
+                    <Typography font={FontType.BOLD_BODY_02}>
+                      Webpack
+                    </Typography>
+                  </Page3ItemTag>
+                  <Page3ItemTag>
+                    <Typography font={FontType.BOLD_BODY_02}>Babel</Typography>
+                  </Page3ItemTag>
+                  <Page3ItemTag>
+                    <Typography font={FontType.BOLD_BODY_02}>ESLint</Typography>
+                  </Page3ItemTag>
+                  <Page3ItemTag>
+                    <Typography font={FontType.BOLD_BODY_02}>
+                      Prettier
+                    </Typography>
+                  </Page3ItemTag>
+                </Page3ItemTagStyled>
               </Page3ItemInfo>
               <Page3ItemInfo>
                 <Typography
@@ -398,6 +571,18 @@ const Home = () => {
                   <br />
                   경험이 있습니다.
                 </Typography>
+                <Page3ItemTagStyled>
+                  <Page3ItemTag>
+                    <Typography font={FontType.BOLD_BODY_02}>
+                      CI / CD
+                    </Typography>
+                  </Page3ItemTag>
+                  <Page3ItemTag>
+                    <Typography font={FontType.BOLD_BODY_02}>
+                      Github Action
+                    </Typography>
+                  </Page3ItemTag>
+                </Page3ItemTagStyled>
               </Page3ItemInfo>
               <Page3ItemInfo>
                 <Typography
@@ -415,6 +600,11 @@ const Home = () => {
                   <br />
                   이용에 익숙합니다.
                 </Typography>
+                <Page3ItemTagStyled>
+                  <Page3ItemTag>
+                    <Typography font={FontType.BOLD_BODY_02}>Git</Typography>
+                  </Page3ItemTag>
+                </Page3ItemTagStyled>
               </Page3ItemInfo>
             </Page3ItemBox>
           </Page3Item>
@@ -724,13 +914,32 @@ const Page1SubTitle = styled.div`
 const Page1Arrow = styled.div`
   width: 75em;
   height: 0.25em;
+  position: relative;
   background-color: ${Color.DEPTH_D};
-  border-radius: 4em;
   margin-left: 4em;
+
+  ::after,
+  ::before {
+    content: '';
+    width: 2em;
+    height: 0.25em;
+    position: absolute;
+    background-color: ${Color.DEPTH_D};
+  }
+  ::after {
+    transform: rotate(45deg);
+    top: -0.65em;
+    right: -0.25em;
+  }
+  ::before {
+    transform: rotate(-45deg);
+    top: 0.65em;
+    right: -0.25em;
+  }
 `;
 
 const Page2Styled = styled.section`
-  width: 176em;
+  width: 210em;
   position: relative;
   display: flex;
   flex-direction: row;
@@ -750,10 +959,33 @@ const Page2Box = styled.div`
   padding-left: 14em;
 `;
 
+const Page2TitleInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-top: 8em;
+  margin-right: 10em;
+`;
+
+const Page2TitleBigStyled = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 1em;
+`;
+
+const BigTypoAnimationStyled = styled.div`
+  width: 70em;
+  height: 8em;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 1em;
+  background-color: ${Color.POINT_B};
+`;
+
 const Page2SubTitleStyled = styled.div`
   position: absolute;
-  top: -0.5vh;
-  left: 53em;
+  top: 10vh;
+  left: 96.5em;
 `;
 
 const Page2SubTitleBox = styled.div`
@@ -769,10 +1001,16 @@ const SpeechIconStyled = styled.div`
   left: 50%;
 `;
 
+const Page2DetailInfoStyled = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
 const Page2DetailInfo = styled.div`
   display: flex;
   flex-direction: column;
   padding-top: 8em;
+  margin-right: 10em;
 `;
 
 const TypoAnimationStyled = styled.div`
@@ -787,10 +1025,13 @@ const TypoAnimationStyled = styled.div`
   padding-top: 0.1em;
 `;
 
-const TypoAnimationItem = styled.div`
-  animation: flip 6s cubic-bezier(0.13, 0.8, 0.22, 1) infinite;
+const TypoAnimationItem = styled.div<{ length: number }>`
+  animation: ${({ length }) =>
+    `flip-${length} ${
+      length * 2 + 's'
+    } cubic-bezier(0.13, 0.8, 0.22, 1) infinite`};
 
-  @keyframes flip {
+  @keyframes flip-3 {
     0% {
       margin-top: -7.8em;
     }
@@ -803,11 +1044,44 @@ const TypoAnimationItem = styled.div`
     60% {
       margin-top: -3.9em;
     }
-    80% {
+    90% {
       margin-top: 0em;
     }
     100% {
       margin-top: -7.8em;
+    }
+  }
+
+  @keyframes flip-5 {
+    0% {
+      margin-top: -15.6em;
+    }
+    10% {
+      margin-top: -15.6em;
+    }
+    20% {
+      margin-top: -11.7em;
+    }
+    30% {
+      margin-top: -11.7em;
+    }
+    40% {
+      margin-top: -7.8em;
+    }
+    50% {
+      margin-top: -7.8em;
+    }
+    60% {
+      margin-top: -3.9em;
+    }
+    70% {
+      margin-top: -3.9em;
+    }
+    85% {
+      margin-top: 0em;
+    }
+    100% {
+      margin-top: -15.6em;
     }
   }
 `;
@@ -819,7 +1093,6 @@ const Page2Deco = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
-  margin-left: 17em;
 `;
 
 const Page3Styled = styled.section`
@@ -842,10 +1115,20 @@ const Page3Item = styled.button<{ last?: boolean; active: boolean }>`
   justify-content: ${({ active }) => (active ? 'flex-start' : 'center')};
   align-items: flex-start;
   border-bottom: ${({ last }) => !last && `3px solid ${Color.DEPTH_D}`};
-  padding: 0 50px;
-  padding-top: ${({ active }) => active && '2em'};
+  padding: 0 5em;
+  padding-top: ${({ active }) => (active ? '1.5em' : '1em')};
   background-color: ${({ active }) => active && Color.DEPTH_D};
   transition: 0.6s;
+`;
+
+const Page3LineStyled = styled.div<{ active: boolean }>`
+  width: calc(100% + 10em);
+  margin-left: -5em;
+  display: ${({ active }) => (!active ? 'none' : 'flex')};
+`;
+
+const Page3Line = styled.img`
+  width: 100%;
 `;
 
 const Page3ItemBox = styled.div<{ active: boolean }>`
@@ -856,11 +1139,27 @@ const Page3ItemBox = styled.div<{ active: boolean }>`
   justify-content: space-around;
   align-items: center;
   overflow: hidden;
+  opacity: ${({ active }) => (active ? 1 : 0)};
   transition: 0.6s;
 `;
 
 const Page3ItemInfo = styled.div`
   margin-top: -5em;
+`;
+
+const Page3ItemTagStyled = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 3em;
+`;
+
+const Page3ItemTag = styled.div`
+  display: inline-flex;
+  background-color: ${Color.DEPTH_L};
+  border-radius: 4em;
+  padding: 0.6em 1.2em;
+  margin-right: 1em;
 `;
 
 const Page4Styled = styled.section`
