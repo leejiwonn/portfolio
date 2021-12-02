@@ -232,13 +232,16 @@ const Home = () => {
             active={techItem === 0}
             {...(techItem !== 0 && cursorHandlers)}
           >
-            <Typography
-              font={FontType.SEMI_BOLD_TITLE_02}
-              color={techItem === 0 ? Color.DEPTH_L : Color.DEPTH_D}
-              marginBottom={50}
-            >
-              HTML5/CSS3
-            </Typography>
+            <Page3ItemTitle>
+              <Typography
+                font={FontType.SEMI_BOLD_TITLE_02}
+                color={techItem === 0 ? Color.DEPTH_L : Color.DEPTH_D}
+                marginBottom={50}
+              >
+                HTML5/CSS3
+              </Typography>
+              <Page3ItemButton active={techItem === 0} />
+            </Page3ItemTitle>
             <Page3LineStyled active={techItem === 0}>
               <Page3Line src="/images/image-dash-line.png" />
             </Page3LineStyled>
@@ -324,13 +327,16 @@ const Home = () => {
             active={techItem === 1}
             {...(techItem !== 1 && cursorHandlers)}
           >
-            <Typography
-              font={FontType.SEMI_BOLD_TITLE_02}
-              color={techItem === 1 ? Color.DEPTH_L : Color.DEPTH_D}
-              marginBottom={50}
-            >
-              JAVASCRIPT (ES6+)
-            </Typography>
+            <Page3ItemTitle>
+              <Typography
+                font={FontType.SEMI_BOLD_TITLE_02}
+                color={techItem === 1 ? Color.DEPTH_L : Color.DEPTH_D}
+                marginBottom={50}
+              >
+                Javascript (ES6+)
+              </Typography>
+              <Page3ItemButton active={techItem === 1} />
+            </Page3ItemTitle>
             <Page3LineStyled active={techItem === 1}>
               <Page3Line src="/images/image-dash-line.png" />
             </Page3LineStyled>
@@ -414,13 +420,16 @@ const Home = () => {
             active={techItem === 2}
             {...(techItem !== 2 && cursorHandlers)}
           >
-            <Typography
-              font={FontType.SEMI_BOLD_TITLE_02}
-              color={techItem === 2 ? Color.DEPTH_L : Color.DEPTH_D}
-              marginBottom={50}
-            >
-              REACT
-            </Typography>
+            <Page3ItemTitle>
+              <Typography
+                font={FontType.SEMI_BOLD_TITLE_02}
+                color={techItem === 2 ? Color.DEPTH_L : Color.DEPTH_D}
+                marginBottom={50}
+              >
+                React
+              </Typography>
+              <Page3ItemButton active={techItem === 2} />
+            </Page3ItemTitle>
             <Page3LineStyled active={techItem === 2}>
               <Page3Line src="/images/image-dash-line.png" />
             </Page3LineStyled>
@@ -509,13 +518,16 @@ const Home = () => {
             active={techItem === 3}
             {...(techItem !== 3 && cursorHandlers)}
           >
-            <Typography
-              font={FontType.SEMI_BOLD_TITLE_02}
-              color={techItem === 3 ? Color.DEPTH_L : Color.DEPTH_D}
-              marginBottom={50}
-            >
-              TOOLING
-            </Typography>
+            <Page3ItemTitle>
+              <Typography
+                font={FontType.SEMI_BOLD_TITLE_02}
+                color={techItem === 3 ? Color.DEPTH_L : Color.DEPTH_D}
+                marginBottom={50}
+              >
+                TOOLING
+              </Typography>
+              <Page3ItemButton active={techItem === 3} />
+            </Page3ItemTitle>
             <Page3LineStyled active={techItem === 3}>
               <Page3Line src="/images/image-dash-line.png" />
             </Page3LineStyled>
@@ -1115,15 +1127,48 @@ const Page3Item = styled.button<{ last?: boolean; active: boolean }>`
   justify-content: ${({ active }) => (active ? 'flex-start' : 'center')};
   align-items: flex-start;
   border-bottom: ${({ last }) => !last && `3px solid ${Color.DEPTH_D}`};
-  padding: 0 5em;
+  padding: 0 3em;
   padding-top: ${({ active }) => (active ? '1.5em' : '1em')};
   background-color: ${({ active }) => active && Color.DEPTH_D};
   transition: 0.6s;
 `;
 
+const Page3ItemTitle = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const Page3ItemButton = styled.div<{ active: boolean }>`
+  width: 2.5em;
+  height: 2.5em;
+  position: relative;
+
+  ::before,
+  ::after {
+    content: '';
+    width: 2.5em;
+    height: 0.25em;
+    position: absolute;
+    top: ${({ active }) => (active ? '0.25em' : '0.5em')};
+    left: 0;
+    background-color: ${({ active }) =>
+      active ? Color.DEPTH_L : Color.DEPTH_D};
+    transition: 0.3s;
+  }
+  ::before {
+    transform: ${({ active }) => (active ? 'rotate(45deg)' : 'rotate(90deg)')};
+  }
+  ::after {
+    transform: ${({ active }) => (active ? 'rotate(-45deg)' : 'rotate(0deg)')};
+  }
+`;
+
 const Page3LineStyled = styled.div<{ active: boolean }>`
-  width: calc(100% + 10em);
-  margin-left: -5em;
+  width: calc(100% + 5em);
+  margin-left: -2.5em;
   display: ${({ active }) => (!active ? 'none' : 'flex')};
 `;
 
