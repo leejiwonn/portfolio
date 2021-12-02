@@ -1568,21 +1568,21 @@ const Home = () => {
             target="_blank"
             {...cursorHandlers}
           >
-            <FacebookIcon />
+            <FacebookIcon width="100%" height="100%" />
           </LinkButton>
           <LinkButton
             href="https://www.instagram.com/ljiwon_b/?hl=ko"
             target="_blank"
             {...cursorHandlers}
           >
-            <InstagramIcon />
+            <InstagramIcon width="100%" height="100%" />
           </LinkButton>
           <LinkButton
             href="https://www.linkedin.com/in/jiwon-lee-b31020186/"
             target="_blank"
             {...cursorHandlers}
           >
-            <LinkedinIcon />
+            <LinkedinIcon width="100%" height="100%" />
           </LinkButton>
         </EndStyled>
       </HomeStyled>
