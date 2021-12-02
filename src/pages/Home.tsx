@@ -13,6 +13,10 @@ import useCursorHandlers from '~/hooks/useCursorHandler';
 
 import SpeechIcon from '../../public/icons/icon-speech.svg';
 import ArrowIcon from '../../public/icons/icon-arrow.svg';
+import DashLineImage from '../../public/images/image-dash-line.svg';
+import FacebookIcon from '../../public/icons/icon-facebook.svg';
+import InstagramIcon from '../../public/icons/icon-instagram.svg';
+import LinkedinIcon from '../../public/icons/icon-linkedin.svg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -245,7 +249,7 @@ const Home = () => {
               <Page3ItemButton active={techItem === 0} />
             </Page3ItemTitle>
             <Page3LineStyled active={techItem === 0}>
-              <Page3Line src="/images/image-dash-line.png" />
+              <DashLineImage stroke={Color.DEPTH_L} />
             </Page3LineStyled>
             <Page3ItemBox active={techItem === 0}>
               <Page3ItemInfo>
@@ -340,7 +344,7 @@ const Home = () => {
               <Page3ItemButton active={techItem === 1} />
             </Page3ItemTitle>
             <Page3LineStyled active={techItem === 1}>
-              <Page3Line src="/images/image-dash-line.png" />
+              <DashLineImage stroke={Color.DEPTH_L} />
             </Page3LineStyled>
             <Page3ItemBox active={techItem === 1}>
               <Page3ItemInfo>
@@ -433,7 +437,7 @@ const Home = () => {
               <Page3ItemButton active={techItem === 2} />
             </Page3ItemTitle>
             <Page3LineStyled active={techItem === 2}>
-              <Page3Line src="/images/image-dash-line.png" />
+              <DashLineImage stroke={Color.DEPTH_L} />
             </Page3LineStyled>
             <Page3ItemBox active={techItem === 2}>
               <Page3ItemInfo>
@@ -531,7 +535,7 @@ const Home = () => {
               <Page3ItemButton active={techItem === 3} />
             </Page3ItemTitle>
             <Page3LineStyled active={techItem === 3}>
-              <Page3Line src="/images/image-dash-line.png" />
+              <DashLineImage stroke={Color.DEPTH_L} />
             </Page3LineStyled>
             <Page3ItemBox active={techItem === 3}>
               <Page3ItemInfo>
@@ -859,12 +863,17 @@ const Home = () => {
         <Page6Styled>
           <Dot />
           <Page6Box>
-            <Typography font={FontType.EXTRA_BOLD_HEAD_02} marginBottom={120}>
+            <Typography font={FontType.EXTRA_BOLD_HEAD_02} marginBottom={60}>
               Want to talk about anything?
               <br />
               Let’s do it! 😄
             </Typography>
-            <Typography font={FontType.SEMI_BOLD_TITLE_03} marginBottom={10}>
+            <DashLineImage stroke={Color.DEPTH_D} />
+            <Typography
+              font={FontType.SEMI_BOLD_TITLE_03}
+              marginTop={140}
+              marginBottom={10}
+            >
               EMAIL 📬
             </Typography>
             <Typography font={FontType.LIGHT_TITLE_02}>
@@ -876,9 +885,27 @@ const Home = () => {
           </PageFooter>
         </Page6Styled>
         <EndStyled>
-          <LinkButton>F</LinkButton>
-          <LinkButton>I</LinkButton>
-          <LinkButton>L</LinkButton>
+          <LinkButton
+            href="https://www.facebook.com/bbongwa/"
+            target="_blank"
+            {...cursorHandlers}
+          >
+            <FacebookIcon />
+          </LinkButton>
+          <LinkButton
+            href="https://www.instagram.com/ljiwon_b/?hl=ko"
+            target="_blank"
+            {...cursorHandlers}
+          >
+            <InstagramIcon />
+          </LinkButton>
+          <LinkButton
+            href="https://www.linkedin.com/in/jiwon-lee-b31020186/"
+            target="_blank"
+            {...cursorHandlers}
+          >
+            <LinkedinIcon />
+          </LinkButton>
         </EndStyled>
       </HomeStyled>
       <Noise />
@@ -1381,24 +1408,28 @@ const Page6Box = styled.div`
 `;
 
 const EndStyled = styled.section`
-  width: 8em;
+  width: 6em;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: ${Color.DEPTH_D};
-  padding: 0 3em;
+  padding: 0 2em;
   padding-bottom: 15em;
   z-index: 999;
 `;
 
-const LinkButton = styled.button`
-  width: 4em;
-  height: 4em;
-  background-color: ${Color.DEPTH_L};
+const LinkButton = styled.a`
+  width: 3em;
+  height: 3em;
   border-radius: 50%;
   margin: 1em 0;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 const PageFooter = styled.div`
