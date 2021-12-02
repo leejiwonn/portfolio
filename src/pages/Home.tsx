@@ -651,7 +651,7 @@ const Home = () => {
                   </Typography>
                 </Page4State>
                 <Page4PrograssBar>
-                  <Page4Prograss width={(projectItem + 1) * 14} />
+                  <Page4Prograss width={(projectItem + 1) * 14.3} />
                   <Page4Background />
                 </Page4PrograssBar>
               </Page4PrograssBarStyled>
