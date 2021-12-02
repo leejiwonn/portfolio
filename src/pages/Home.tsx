@@ -1178,7 +1178,7 @@ const Page3Line = styled.img`
 
 const Page3ItemBox = styled.div<{ active: boolean }>`
   width: 100%;
-  height: ${({ active }) => (active ? '50vh' : 0)};
+  height: ${({ active }) => (active ? '48vh' : 0)};
   display: flex;
   flex-direction: row;
   justify-content: space-around;
