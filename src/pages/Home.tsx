@@ -2053,7 +2053,7 @@ const Page4NextButton = styled.button<{ disabled: boolean }>`
 
 const Page4BoxStyled = styled.div`
   width: 100%;
-  height: 45em;
+  height: 42em;
   position: relative;
   overflow: hidden;
 `;
@@ -2061,12 +2061,12 @@ const Page4BoxStyled = styled.div`
 const Page4Container = styled.div<{ index: number }>`
   width: 100%;
   height: auto;
-  margin-top: ${({ index }) => index * -45 + 'em'};
+  margin-top: ${({ index }) => index * -42 + 'em'};
 `;
 
 const Page4Box = styled.div`
   width: 100%;
-  height: 45em;
+  height: 42em;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
