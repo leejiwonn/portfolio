@@ -133,6 +133,12 @@ const LinkButton = styled.a`
   border: 2px solid ${Color.DEPTH_D};
   border-radius: 4em;
   margin: 0 0.5em;
+  transition: 0.2s;
+
+  :hover {
+    background-color: rgba(64, 75, 80, 0.1);
+    transition: 0.4s;
+  }
 `;
 
 export default Header;

@@ -1889,6 +1889,11 @@ const Page3Item = styled.button<{ last?: boolean; active: boolean }>`
   padding-top: ${({ active }) => (active ? '1.5em' : '1em')};
   background-color: ${({ active }) => active && Color.DEPTH_D};
   transition: 0.6s;
+
+  :hover {
+    background-color: ${({ active }) => !active && 'rgba(64, 75, 80, 0.1)'};
+    transition: 0.4s;
+  }
 `;
 
 const Page3ItemTitle = styled.div`
@@ -2106,8 +2111,14 @@ const Page4LinkButton = styled.a`
   display: inline-flex;
   padding: 0.5em 1em;
   border-radius: 40px;
-  border: 3px solid ${Color.DEPTH_D};
+  border: 2px solid ${Color.DEPTH_D};
   margin-right: 0.8em;
+  transition: 0.2s;
+
+  :hover {
+    background-color: rgba(64, 75, 80, 0.1);
+    transition: 0.4s;
+  }
 `;
 
 // const Page4ImageView = styled.div`
@@ -2144,6 +2155,12 @@ const Page5BoxItem = styled.a`
   border: 4px solid ${Color.DEPTH_D};
   border-radius: 10px;
   margin: 0 1.5em;
+  transition: 0.2s;
+
+  :hover {
+    background-color: rgba(64, 75, 80, 0.1);
+    transition: 0.4s;
+  }
 `;
 
 const ArrowIconStyled = styled.div<{ active: boolean }>`
@@ -2223,6 +2240,13 @@ const LinkButton = styled.a`
   height: 3em;
   border-radius: 50%;
   margin: 1em 0;
+  opacity: 0.85;
+  transition: 0.2s;
+
+  :hover {
+    opacity: 1;
+    transition: 0.4s;
+  }
 
   svg {
     width: 100%;
