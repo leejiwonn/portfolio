@@ -687,7 +687,7 @@ const Home = () => {
                       font={FontType.MEDIUM_TITLE_03}
                       marginBottom={60}
                     >
-                      몰입의 즐거움을 경험하다!
+                      몰입 👀 의 즐거움을 경험하다!
                     </Typography>
                     <Page4Tags>
                       <Page4TagItem>
@@ -786,7 +786,7 @@ const Home = () => {
                       font={FontType.MEDIUM_TITLE_03}
                       marginBottom={60}
                     >
-                      루틴 메이커 앱 👩🏻‍💻 서비스
+                      루틴 메이커 ✍️ 앱 서비스
                     </Typography>
                     <Page4Tags>
                       <Page4TagItem>
@@ -910,7 +910,7 @@ const Home = () => {
                       font={FontType.MEDIUM_TITLE_03}
                       marginBottom={60}
                     >
-                      작업하기 좋은 주변 카페 추천 앱 서비스
+                      작업 🧑‍💻 하기 좋은 주변 카페 추천 앱 서비스
                     </Typography>
                     <Page4Tags>
                       <Page4TagItem>
@@ -1011,7 +1011,7 @@ const Home = () => {
                       font={FontType.MEDIUM_TITLE_03}
                       marginBottom={60}
                     >
-                      42 Seoul 카뎃을 대상으로 하는 스터디 매칭 웹 서비스
+                      42 Seoul 카뎃을 대상으로 하는 스터디 매칭 🤝 웹 서비스
                     </Typography>
                     <Page4Tags>
                       <Page4TagItem>
@@ -1123,8 +1123,8 @@ const Home = () => {
                       font={FontType.MEDIUM_TITLE_03}
                       marginBottom={60}
                     >
-                      리액트 네이티브 스터디에서 출발한 공식 문서 한글 번역 앱
-                      서비스
+                      리액트 네이티브 스터디 🌱 에서 출발한 공식 문서 한글 번역
+                      앱 서비스
                     </Typography>
                     <Page4Tags>
                       <Page4TagItem>
@@ -1217,7 +1217,7 @@ const Home = () => {
                       font={FontType.MEDIUM_TITLE_03}
                       marginBottom={60}
                     >
-                      국내 숙박 어플리케이션 야놀자 UX 개선 프로젝트
+                      국내 숙박 어플리케이션 야놀자 UX 개선 ✨ 프로젝트
                     </Typography>
                     <Page4Tags>
                       <Page4TagItem>
@@ -1302,7 +1302,8 @@ const Home = () => {
                       font={FontType.MEDIUM_TITLE_03}
                       marginBottom={60}
                     >
-                      주의력결핍장애 아동을 위한 인공지능 멘탈 헬스케어 서비스
+                      주의력결핍장애 아동을 위한 인공지능 🤖 멘탈 헬스케어
+                      서비스
                     </Typography>
                     <Page4Tags>
                       <Page4TagItem>
@@ -1411,7 +1412,7 @@ const Home = () => {
                 <Page5BoxItemCircle color={Color.DEPTH_L} />
               </Page5BoxItemBar>
               <Page5BoxInfo>
-                <Typography font={FontType.SEMI_BOLD_TITLE_02}>
+                <Typography font={FontType.SEMI_BOLD_TITLE_01}>
                   42SEOUL
                 </Typography>
                 <div>
@@ -1445,7 +1446,7 @@ const Home = () => {
                 <Page5BoxItemCircle color={Color.DEPTH_L} />
               </Page5BoxItemBar>
               <Page5BoxInfo>
-                <Typography font={FontType.SEMI_BOLD_TITLE_02}>
+                <Typography font={FontType.SEMI_BOLD_TITLE_01}>
                   NEXTERS
                 </Typography>
                 <div>
@@ -1479,7 +1480,7 @@ const Home = () => {
                 <Page5BoxItemCircle color={Color.DEPTH_L} />
               </Page5BoxItemBar>
               <Page5BoxInfo>
-                <Typography font={FontType.SEMI_BOLD_TITLE_02}>
+                <Typography font={FontType.SEMI_BOLD_TITLE_01}>
                   DEPROMEET
                 </Typography>
                 <div>
@@ -1513,7 +1514,7 @@ const Home = () => {
                 <Page5BoxItemCircle color={Color.DEPTH_L} />
               </Page5BoxItemBar>
               <Page5BoxInfo>
-                <Typography font={FontType.SEMI_BOLD_TITLE_02}>
+                <Typography font={FontType.SEMI_BOLD_TITLE_01}>
                   토의스토리
                 </Typography>
                 <div>
@@ -1717,7 +1718,6 @@ const Page2Box = styled.div`
 const Page2TitleInfo = styled.div`
   display: flex;
   flex-direction: column;
-  padding-top: 8em;
   margin-right: 10em;
 `;
 
@@ -1739,7 +1739,7 @@ const BigTypoAnimationStyled = styled.div`
 
 const Page2SubTitleStyled = styled.div`
   position: absolute;
-  top: 12vh;
+  top: 1.5vh;
   left: 96.6em;
   animation: elastic 0.6s ease-out infinite alternate;
 
@@ -1932,7 +1932,7 @@ const Page3LineStyled = styled.div<{ active: boolean }>`
 
 const Page3ItemBox = styled.div<{ active: boolean }>`
   width: 100%;
-  height: ${({ active }) => (active ? '48vh' : 0)};
+  height: ${({ active }) => (active ? '45vh' : 0)};
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -2006,7 +2006,7 @@ const Page4State = styled.div`
 `;
 
 const Page4PrograssBar = styled.div`
-  width: 55%;
+  width: 60%;
   height: 0.25em;
   position: relative;
   overflow: hidden;
@@ -2073,7 +2073,7 @@ const Page4Box = styled.div`
 `;
 
 const Page4Info = styled.div`
-  width: 55%;
+  width: 60%;
   margin-top: 3em;
 `;
 
