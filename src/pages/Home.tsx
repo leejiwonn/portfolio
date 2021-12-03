@@ -1739,8 +1739,23 @@ const BigTypoAnimationStyled = styled.div`
 
 const Page2SubTitleStyled = styled.div`
   position: absolute;
-  top: 10vh;
-  left: 96.5em;
+  top: 12vh;
+  left: 96.6em;
+  animation: elastic 0.6s ease-out infinite alternate;
+
+  @keyframes elastic {
+    0% {
+      transform: translateY(0%);
+    }
+
+    36% {
+      transform: translateY(-8%);
+    }
+
+    48% {
+      transform: translateY(-6%);
+    }
+  }
 `;
 
 const Page2SubTitleBox = styled.div`
