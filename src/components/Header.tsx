@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { Color } from '~/utils/color';
 import { FontType } from '~/utils/font';
-import { getContributions } from '~/utils/api';
+import { fetchContribution } from '~/remotes/contribution';
 import Typography from '~/components/Typography';
 import { Contribution } from '~/types/contribution';
 import useCursorHandlers from '~/hooks/useCursorHandler';
@@ -17,7 +17,7 @@ const Header = () => {
   useEffect(() => {
     const fetchContributions = async () => {
       try {
-        const data = await getContributions();
+        const data = await fetchContribution();
         const totalContributions =
           data.contributionsCollection.contributionCalendar.totalContributions;
         const weekData =

@@ -1,7 +1,11 @@
-export const getContributions = async () => {
+import type { Request, Response } from 'express';
+import nc from 'next-connect';
+
+async function getContributions(_: Request, res: Response) {
   const headers = {
     Authorization: `bearer ${process.env.NEXT_PUBLIC_GITHUB_ACCESS_TOKEN}`,
   };
+
   const body = {
     query: `query {
           user(login: "leejiwonn") {
@@ -30,6 +34,11 @@ export const getContributions = async () => {
     body: JSON.stringify(body),
     headers: headers,
   });
+
   const data = await response.json();
-  return data.data.user;
-};
+  res.status(200).send(data.data.user);
+}
+
+const handler = nc<Request, Response>().get(getContributions);
+
+export default handler;
