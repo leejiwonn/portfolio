@@ -124,7 +124,7 @@ const Home = () => {
               </Typography>
               <Page2TitleBigStyled>
                 <BigTypoAnimationStyled>
-                  <TypoAnimationItem length={5}>
+                  <BigTypoAnimationItem>
                     {[
                       '활발하고 긍정적인',
                       '사용자 경험 개선에 관심이 많은',
@@ -140,7 +140,7 @@ const Home = () => {
                         {value}
                       </Typography>
                     ))}
-                  </TypoAnimationItem>
+                  </BigTypoAnimationItem>
                 </BigTypoAnimationStyled>
                 <Typography font={FontType.EXTRA_BOLD_HEAD_02} marginLeft={20}>
                   개발자 이지원 😆 입니다.
@@ -1737,6 +1737,43 @@ const BigTypoAnimationStyled = styled.div`
   background-color: ${Color.POINT_B};
 `;
 
+const BigTypoAnimationItem = styled.div`
+  animation: flip-big 16s cubic-bezier(0.13, 0.8, 0.22, 1) infinite;
+
+  @keyframes flip-big {
+    0% {
+      margin-top: -29.8em;
+    }
+    10% {
+      margin-top: -29.8em;
+    }
+    20% {
+      margin-top: -22.2em;
+    }
+    30% {
+      margin-top: -22.2em;
+    }
+    40% {
+      margin-top: -14.6em;
+    }
+    50% {
+      margin-top: -14.6em;
+    }
+    60% {
+      margin-top: -7.4em;
+    }
+    70% {
+      margin-top: -7.4em;
+    }
+    85% {
+      margin-top: 0em;
+    }
+    100% {
+      margin-top: -29.8em;
+    }
+  }
+`;
+
 const Page2SubTitleStyled = styled.div`
   position: absolute;
   top: 1.5vh;
@@ -1803,55 +1840,55 @@ const TypoAnimationItem = styled.div<{ length: number }>`
 
   @keyframes flip-3 {
     0% {
-      margin-top: -7.8em;
+      margin-top: -7.2em;
     }
     20% {
-      margin-top: -7.8em;
+      margin-top: -7.2em;
     }
     40% {
-      margin-top: -3.9em;
+      margin-top: -3.5em;
     }
     60% {
-      margin-top: -3.9em;
+      margin-top: -3.5em;
     }
     90% {
       margin-top: 0em;
     }
     100% {
-      margin-top: -7.8em;
+      margin-top: -7.2em;
     }
   }
 
   @keyframes flip-5 {
     0% {
-      margin-top: -15.6em;
+      margin-top: -14.3em;
     }
     10% {
-      margin-top: -15.6em;
+      margin-top: -14.3em;
     }
     20% {
-      margin-top: -11.7em;
+      margin-top: -10.7em;
     }
     30% {
-      margin-top: -11.7em;
+      margin-top: -10.7em;
     }
     40% {
-      margin-top: -7.8em;
+      margin-top: -7.1em;
     }
     50% {
-      margin-top: -7.8em;
+      margin-top: -7.1em;
     }
     60% {
-      margin-top: -3.9em;
+      margin-top: -3.5em;
     }
     70% {
-      margin-top: -3.9em;
+      margin-top: -3.5em;
     }
     85% {
-      margin-top: 0em;
+      margin-top: 0.2em;
     }
     100% {
-      margin-top: -15.6em;
+      margin-top: -14.3em;
     }
   }
 `;
