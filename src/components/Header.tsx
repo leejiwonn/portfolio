@@ -50,7 +50,7 @@ const Header = () => {
   return (
     <HeaderStyled>
       <Logo href="/">
-        <Typography tag="span" font={FontType.SEMI_BOLD_BODY_01}>
+        <Typography tag="span" font={FontType.SEMI_BOLD_BODY_02}>
           ☺︎ FE DEV | JIWON LEE
         </Typography>
       </Logo>
@@ -77,7 +77,7 @@ const Header = () => {
           target="_blank"
           {...cursorHandlers}
         >
-          <Typography tag="span" font={FontType.SEMI_BOLD_BODY_02}>
+          <Typography tag="span" font={FontType.SEMI_BOLD_CAPTION_01}>
             GITHUB
           </Typography>
         </LinkButton>
@@ -86,7 +86,7 @@ const Header = () => {
           target="_blank"
           {...cursorHandlers}
         >
-          <Typography tag="span" font={FontType.SEMI_BOLD_BODY_02}>
+          <Typography tag="span" font={FontType.SEMI_BOLD_CAPTION_01}>
             BLOG
           </Typography>
         </LinkButton>
@@ -97,14 +97,14 @@ const Header = () => {
 
 const HeaderStyled = styled.div`
   width: 100%;
-  height: 6em;
+  height: 4.5em;
   position: fixed;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   border-bottom: 4px solid ${Color.DEPTH_D};
-  padding: 0 2em;
+  padding: 0 1.2em;
   z-index: 999;
 `;
 
@@ -129,10 +129,10 @@ const ButtonView = styled.div``;
 
 const LinkButton = styled.a`
   display: inline-block;
-  padding: 0.3em 1.2em;
-  border: 2px solid ${Color.DEPTH_D};
+  padding: 0.2em 0.7em;
+  border: 0.2em solid ${Color.DEPTH_D};
   border-radius: 4em;
-  margin: 0 0.5em;
+  margin: 0 0.3em;
   transition: 0.2s;
 
   :hover {

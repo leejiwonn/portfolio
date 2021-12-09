@@ -3,6 +3,7 @@ import { useEffect, useRef, useState, useCallback } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
+import Sidebar from '~/components/Sidebar';
 import Header from '~/components/Header';
 import Typography from '~/components/Typography';
 import Dot from '~/components/Dot';
@@ -59,14 +60,14 @@ const Home = () => {
   useEffect(() => {
     const panels: HTMLDivElement[] = gsap.utils.toArray('section');
 
-    const maxWidth = () => {
+    const getMaxWidth = () => {
       let max = 0;
       panels.forEach((panel) => (max += panel.offsetWidth));
       return max;
     };
 
     gsap.to(panels, {
-      x: () => -maxWidth() + window.innerWidth,
+      x: () => -getMaxWidth() + window.innerWidth,
       ease: 'ease-in',
       scrollTrigger: {
         trigger: panelsContainer.current,
@@ -77,6 +78,43 @@ const Home = () => {
       },
     });
   }, []);
+
+  /* sidebar scroll animation */
+  useEffect(() => {
+    const width = Math.floor(scrollWidth);
+
+    if (7 < width && width < 22) {
+      gsap.to('.sidebar-item-1', { marginTop: 0, duration: 0.3 });
+    } else {
+      gsap.to('.sidebar-item-1', { marginTop: 80, duration: 0.3 });
+    }
+
+    if (22 <= width && width < 33) {
+      gsap.to('.sidebar-item-2', { marginTop: 0, duration: 0.3 });
+    } else {
+      gsap.to('.sidebar-item-2', { marginTop: 80, duration: 0.3 });
+    }
+
+    if (33 <= width && width < 52) {
+      gsap.to('.sidebar-item-3', { marginTop: 0, duration: 0.3 });
+    } else {
+      gsap.to('.sidebar-item-3', { marginTop: 80, duration: 0.3 });
+    }
+
+    if (52 <= width && width < 87) {
+      gsap.to('.sidebar-item-4', { marginTop: 0, duration: 0.3 });
+    } else {
+      gsap.to('.sidebar-item-4', { marginTop: 80, duration: 0.3 });
+    }
+
+    if (87 <= width) {
+      gsap.to('.sidebar', { marginLeft: '-7em', duration: 0.6 });
+    } else if (7 < width && width < 86) {
+      gsap.to('.sidebar', { marginLeft: 0, duration: 0.5 });
+    } else if (width < 8) {
+      gsap.to('.sidebar', { marginLeft: '-7em', duration: 0.5 });
+    }
+  }, [scrollWidth]);
 
   /* scrolling animation */
   const prev = useRef(0);
@@ -121,6 +159,7 @@ const Home = () => {
 
   return (
     <>
+      <Sidebar />
       <Header />
       <HomeStyled ref={panelsContainer}>
         <Page1Styled>
@@ -1626,7 +1665,7 @@ const HomeStyled = styled.div`
   width: 700%;
   height: calc(100vh - 0.7em);
   display: flex;
-  padding-top: 6em;
+  padding-top: 4.5em;
 `;
 
 const Page1Styled = styled.section`
@@ -2340,7 +2379,7 @@ const PagePrograssBarStyled = styled.div`
   width: 100%;
   height: 0.7em;
   position: fixed;
-  left: 0;
+  right: 0;
   bottom: 0;
   background-color: rgba(64, 75, 80, 0.2);
 `;
