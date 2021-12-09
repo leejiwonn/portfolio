@@ -1930,7 +1930,7 @@ const Page3Item = styled.button<{ last?: boolean; active: boolean }>`
   align-items: flex-start;
   border-bottom: ${({ last }) => !last && `3px solid ${Color.DEPTH_D}`};
   padding: 0 3em;
-  padding-top: ${({ active }) => (active ? '1.5em' : '1em')};
+  padding-top: ${({ active }) => (active ? '1.6em' : '1em')};
   background-color: ${({ active }) => active && Color.DEPTH_D};
   transition: 0.6s;
 
@@ -1975,13 +1975,14 @@ const Page3ItemButton = styled.div<{ active: boolean }>`
 
 const Page3LineStyled = styled.div<{ active: boolean }>`
   width: calc(100% + 5em);
+  margin-top: 0.8em;
   margin-left: -2.5em;
   display: ${({ active }) => (!active ? 'none' : 'flex')};
 `;
 
 const Page3ItemBox = styled.div<{ active: boolean }>`
   width: 100%;
-  height: ${({ active }) => (active ? '45vh' : 0)};
+  height: ${({ active }) => (active ? '55vh' : 0)};
   display: flex;
   flex-direction: row;
   justify-content: space-around;
