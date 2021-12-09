@@ -846,6 +846,7 @@ const Home = () => {
                       </Page4LinkButton>
                     </Page4LinkButtonStyled>
                   </Page4Info>
+                  <Page4ViewStyled backgroundImage="/images/projects/project-1.png" />
                 </Page4Box>
                 <Page4Box>
                   <Page4Info>
@@ -970,6 +971,7 @@ const Home = () => {
                       </Page4LinkButton>
                     </Page4LinkButtonStyled>
                   </Page4Info>
+                  <Page4ViewStyled backgroundImage="/images/projects/project-2.png" />
                 </Page4Box>
                 <Page4Box>
                   <Page4Info>
@@ -1071,6 +1073,7 @@ const Home = () => {
                       </Page4LinkButton>
                     </Page4LinkButtonStyled>
                   </Page4Info>
+                  <Page4ViewStyled backgroundImage="/images/projects/project-3.png" />
                 </Page4Box>
                 <Page4Box>
                   <Page4Info>
@@ -1183,6 +1186,7 @@ const Home = () => {
                       </Page4LinkButton>
                     </Page4LinkButtonStyled>
                   </Page4Info>
+                  <Page4ViewStyled backgroundImage="/images/projects/project-4.png" />
                 </Page4Box>
                 <Page4Box>
                   <Page4Info>
@@ -1277,6 +1281,7 @@ const Home = () => {
                       </Page4LinkButton>
                     </Page4LinkButtonStyled>
                   </Page4Info>
+                  <Page4ViewStyled backgroundImage="/images/projects/project-5.png" />
                 </Page4Box>
                 <Page4Box>
                   <Page4Info>
@@ -1362,6 +1367,7 @@ const Home = () => {
                       </Page4LinkButton>
                     </Page4LinkButtonStyled>
                   </Page4Info>
+                  <Page4ViewStyled backgroundImage="/images/projects/project-6.png" />
                 </Page4Box>
                 <Page4Box>
                   <Page4Info>
@@ -1455,6 +1461,7 @@ const Home = () => {
                       </Page4LinkButton>
                     </Page4LinkButtonStyled>
                   </Page4Info>
+                  <Page4ViewStyled backgroundImage="/images/projects/project-7.png" />
                 </Page4Box>
               </Page4Container>
             </Page4BoxStyled>
@@ -2077,7 +2084,7 @@ const Page3ItemTag = styled.div`
 `;
 
 const Page4Styled = styled.section`
-  width: 170em;
+  width: 210em;
   position: relative;
   display: flex;
   flex-direction: row;
@@ -2089,6 +2096,7 @@ const Page4Styled = styled.section`
 `;
 
 const Page4InfoStyled = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -2097,10 +2105,10 @@ const Page4InfoStyled = styled.div`
 `;
 
 const Page4Navigation = styled.div`
-  width: 55%;
+  width: 41.5%;
   position: absolute;
   top: -3.2em;
-  left: 10%;
+  left: 14em;
   z-index: 999;
 `;
 
@@ -2179,7 +2187,7 @@ const Page4BoxStyled = styled.div`
 const Page4Container = styled.div<{ index: number }>`
   width: 100%;
   height: auto;
-  margin-top: ${({ index }) => index * -42 + 'em'};
+  margin-top: ${({ index }) => index * -44 + 'em'};
 `;
 
 const Page4Box = styled.div`
@@ -2187,12 +2195,23 @@ const Page4Box = styled.div`
   height: 42em;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: flex-start;
+  margin-bottom: 2em;
 `;
 
 const Page4Info = styled.div`
-  width: 60%;
+  width: 45%;
   margin-top: 2.5em;
+`;
+
+const Page4ViewStyled = styled.div<{ backgroundImage: string }>`
+  width: 53%;
+  height: 43em;
+  overflow: hidden;
+  background-image: ${({ backgroundImage }) => `url(${backgroundImage})`};
+  background-size: contain;
+  background-repeat: no-repeat;
 `;
 
 const Page4Tags = styled.div`
@@ -2233,13 +2252,6 @@ const Page4LinkButton = styled.a`
     transition: 0.4s;
   }
 `;
-
-// const Page4ImageView = styled.div`
-//   width: 50%;
-//   height: 40em;
-//   background-color: ${Color.DEPTH_D};
-//   margin-left: 6em;
-// `;
 
 const Page5Styled = styled.section`
   width: 200em;
