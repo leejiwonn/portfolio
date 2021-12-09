@@ -702,7 +702,7 @@ const Home = () => {
                       font={FontType.MEDIUM_TITLE_03}
                       marginBottom={60}
                     >
-                      몰입 👀 의 즐거움을 경험하다!
+                      몰입 👀 분위기 형성 웹 서비스
                     </Typography>
                     <Page4Tags>
                       <Page4TagItem>
@@ -773,6 +773,8 @@ const Home = () => {
                     </Typography>
                     <Typography font={FontType.LIGHT_BODY_02}>
                       - 사용자 피드백을 바탕으로 하는 3번의 MVP 검증 과정 진행
+                      <br />- 가로 스크롤 및 애니메이션을 적용한 서비스 소개
+                      페이지 구현
                       <br />- 전반적인 UI 구현 및 API 연동을 혼자 전담하여 업무
                       수행
                     </Typography>
@@ -1180,8 +1182,8 @@ const Home = () => {
                     </Typography>
                     <Typography font={FontType.LIGHT_BODY_02}>
                       - 프로젝트 환경셋팅과 구조 설계, 디자인 및 전반적인 UI
-                      구현을 담당함.
-                      <br />- 햄버거 메뉴 기능 구현을 담당함.
+                      구현
+                      <br />- 햄버거 메뉴 기능 구현
                     </Typography>
                     <Page4LinkButtonStyled>
                       <Page4LinkButton
