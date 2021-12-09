@@ -35,15 +35,15 @@ const Header = () => {
 
   const getOpacity = (color: string) => {
     if (color === '#9be9a8') {
-      return 0.2;
+      return 0.5;
     } else if (color === '#40c463') {
-      return 0.4;
-    } else if (color === '#30a14e') {
       return 0.7;
+    } else if (color === '#30a14e') {
+      return 0.9;
     } else if (color === '#216e39') {
       return 1;
     } else {
-      return 0.1;
+      return 0.2;
     }
   };
 
@@ -119,7 +119,7 @@ const GithubGrass = styled.div`
 const GithubGrassItem = styled.div<{ color?: string; opacity?: number }>`
   width: 1.8em;
   height: 1.8em;
-  background-color: ${({ color }) => (color ? color : Color.DEPTH_D)};
+  background-color: ${({ color }) => (color ? color : Color.POINT_O)};
   opacity: ${({ opacity }) => opacity};
   border-radius: 0.4em;
   margin: 0 0.3em;
