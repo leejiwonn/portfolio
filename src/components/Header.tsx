@@ -136,7 +136,7 @@ const LinkButton = styled.a`
   transition: 0.2s;
 
   :hover {
-    background-color: rgba(64, 75, 80, 0.1);
+    background-color: rgba(206, 233, 247, 0.3);
     transition: 0.4s;
   }
 `;

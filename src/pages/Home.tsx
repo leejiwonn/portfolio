@@ -1928,7 +1928,7 @@ const Page3Item = styled.button<{ last?: boolean; active: boolean }>`
   transition: 0.6s;
 
   :hover {
-    background-color: ${({ active }) => !active && 'rgba(64, 75, 80, 0.1)'};
+    background-color: ${({ active }) => !active && 'rgba(206, 233, 247, 0.25)'};
     transition: 0.4s;
   }
 `;
@@ -2049,28 +2049,30 @@ const Page4State = styled.div`
 
 const Page4PrograssBar = styled.div`
   width: 60%;
-  height: 0.25em;
+  height: 0.5em;
   position: relative;
   overflow: hidden;
+  border-radius: 30em;
 `;
 
 const Page4Prograss = styled.div<{ width: number }>`
   width: ${({ width }) => width + '%'};
-  height: 0.25em;
+  height: 0.5em;
   position: absolute;
   left: 0;
-  background-color: ${Color.DEPTH_D};
+  background-color: ${Color.POINT_O};
   transition: 0.2s;
+  border-radius: 30em;
 `;
 
 const Page4Background = styled.div`
   width: 100%;
-  height: 0.25em;
+  height: 0.5em;
   position: absolute;
   left: 0;
   right: 0;
-  background-color: ${Color.DEPTH_D};
-  opacity: 0.2;
+  background-color: ${Color.POINT_O};
+  opacity: 0.3;
 `;
 
 const Page4ControlButtonStyled = styled.div`
@@ -2116,7 +2118,7 @@ const Page4Box = styled.div`
 
 const Page4Info = styled.div`
   width: 60%;
-  margin-top: 3em;
+  margin-top: 2.5em;
 `;
 
 const Page4Tags = styled.div`
@@ -2153,7 +2155,7 @@ const Page4LinkButton = styled.a`
   transition: 0.2s;
 
   :hover {
-    background-color: rgba(64, 75, 80, 0.1);
+    background-color: rgba(206, 233, 247, 0.3);
     transition: 0.4s;
   }
 `;
@@ -2195,7 +2197,7 @@ const Page5BoxItem = styled.a`
   transition: 0.2s;
 
   :hover {
-    background-color: rgba(64, 75, 80, 0.1);
+    background-color: rgba(206, 233, 247, 0.25);
     transition: 0.4s;
   }
 `;
