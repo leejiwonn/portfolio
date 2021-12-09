@@ -19,6 +19,8 @@ import FacebookIcon from '../../public/icons/icon-facebook.svg';
 import InstagramIcon from '../../public/icons/icon-instagram.svg';
 import LinkedinIcon from '../../public/icons/icon-linkedin.svg';
 import CopyIcon from '../../public/icons/icon-copy.svg';
+import PrevIcon from '../../public/icons/icon-prev.svg';
+import NextIcon from '../../public/icons/icon-next.svg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -707,6 +709,7 @@ const Home = () => {
                   <Typography
                     tag="span"
                     font={FontType.BOLD_BODY_01}
+                    marginLeft={15}
                     marginRight={30}
                   >
                     0{projectItem + 1}
@@ -728,7 +731,7 @@ const Home = () => {
                   }
                   {...cursorHandlers}
                 >
-                  이전
+                  <PrevIcon />
                 </Page4PrevButton>
                 <Page4NextButton
                   disabled={projectItem === 6}
@@ -737,7 +740,7 @@ const Home = () => {
                   }
                   {...cursorHandlers}
                 >
-                  다음
+                  <NextIcon />
                 </Page4NextButton>
               </Page4ControlButtonStyled>
             </Page4Navigation>
@@ -2094,7 +2097,7 @@ const Page4InfoStyled = styled.div`
 `;
 
 const Page4Navigation = styled.div`
-  width: 90%;
+  width: 55%;
   position: absolute;
   top: -3.2em;
   left: 10%;
@@ -2117,7 +2120,7 @@ const Page4State = styled.div`
 `;
 
 const Page4PrograssBar = styled.div`
-  width: 60%;
+  width: 100%;
   height: 0.5em;
   position: relative;
   overflow: hidden;
@@ -2155,12 +2158,14 @@ const Page4ControlButtonStyled = styled.div`
 `;
 
 const Page4PrevButton = styled.button<{ disabled: boolean }>`
-  padding: 0.5em;
+  padding: 0.6em 0;
+  padding-right: 0.9em;
   opacity: ${({ disabled }) => disabled && 0.4};
 `;
 
 const Page4NextButton = styled.button<{ disabled: boolean }>`
-  padding: 0.5em;
+  padding: 0.6em 0;
+  padding-right: 0.2em;
   opacity: ${({ disabled }) => disabled && 0.4};
 `;
 
