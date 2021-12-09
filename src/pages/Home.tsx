@@ -17,6 +17,7 @@ import DashLineImage from '../../public/images/image-dash-line.svg';
 import FacebookIcon from '../../public/icons/icon-facebook.svg';
 import InstagramIcon from '../../public/icons/icon-instagram.svg';
 import LinkedinIcon from '../../public/icons/icon-linkedin.svg';
+import CopyIcon from '../../public/icons/icon-copy.svg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -107,6 +108,16 @@ const Home = () => {
       window.removeEventListener('scroll', listener, true);
     };
   }, []);
+
+  /* copy clipboard */
+  const handleCopyClipBoard = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      alert('이메일을 복사했습니다.');
+    } catch (error) {
+      alert('다시 시도해주세요.');
+    }
+  };
 
   return (
     <>
@@ -1564,9 +1575,19 @@ const Home = () => {
             >
               EMAIL 📬
             </Typography>
-            <Typography font={FontType.LIGHT_TITLE_02}>
-              bbongwa123@gmail.com
-            </Typography>
+            <EmailStyled>
+              <a href="mailto:bbongwa123@gmail.com" {...cursorHandlers}>
+                <Typography tag="span" font={FontType.LIGHT_TITLE_02}>
+                  bbongwa123@gmail.com
+                </Typography>
+              </a>
+              <CopyButton
+                onClick={() => handleCopyClipBoard('bbongwa123@gmail.com')}
+                {...cursorHandlers}
+              >
+                <CopyIcon width="100%" height="100%" />
+              </CopyButton>
+            </EmailStyled>
           </Page6Box>
         </Page6Styled>
         <EndStyled>
@@ -2266,6 +2287,21 @@ const Page6Box = styled.div`
   align-items: flex-start;
   padding-left: 14em;
   padding-right: 30em;
+`;
+
+const EmailStyled = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`;
+
+const CopyButton = styled.button`
+  width: 1.6em;
+  height: 1.6em;
+  margin-top: 0.4em;
+  margin-left: 0.9em;
+  opacity: 0.8;
 `;
 
 const EndStyled = styled.section`
