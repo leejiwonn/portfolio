@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
@@ -23,9 +23,34 @@ gsap.registerPlugin(ScrollTrigger);
 const Home = () => {
   const cursorHandlers = useCursorHandlers();
 
+  const [scrollWidth, setScrollWidth] = useState(0);
+  const prograssRef = useRef<HTMLDivElement | null>(null);
+
   const [techItem, setTechItem] = useState(0);
   const [projectItem, setProjectItem] = useState(0);
   const [activityItem, setActivityItem] = useState(-1);
+
+  /* scroll prograssBar */
+  const handleScroll = useCallback((): void => {
+    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+
+    if (scrollTop === 0) {
+      setScrollWidth(0);
+      return;
+    }
+
+    const windowHeight: number = scrollHeight - clientHeight;
+    const currentPercent: number = scrollTop / windowHeight;
+    setScrollWidth(currentPercent * 100);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, true);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll, true);
+    };
+  }, [handleScroll]);
 
   /* horizontal scroll */
   const panelsContainer = useRef<HTMLInputElement>(null);
@@ -107,10 +132,8 @@ const Home = () => {
             </Typography>
           </Page1MainTitle>
           <Page1SubTitle>
-            <Typography font={FontType.MEDIUM_TITLE_03}>
-              오늘도 능동적으로 성장하고자
-              <br />
-              열심히 🔥 움직이고 있습니다.
+            <Typography font={FontType.MEDIUM_BODY_01}>
+              오늘도 능동적으로 성장하고자 열심히 🔥 움직이고 있습니다.
             </Typography>
             <Page1Arrow />
           </Page1SubTitle>
@@ -229,9 +252,6 @@ const Home = () => {
             </Typography>
           </Page2Deco>
           <Dot />
-          <PageFooter>
-            <Typography font={FontType.MEDIUM_HEAD_02}>ABOUT</Typography>
-          </PageFooter>
         </Page2Styled>
         <Page3Styled>
           <Page3Item
@@ -627,11 +647,6 @@ const Home = () => {
               </Page3ItemInfo>
             </Page3ItemBox>
           </Page3Item>
-          <PageFooter>
-            <Typography font={FontType.MEDIUM_HEAD_02}>
-              TECHS {'&'} TOOLS
-            </Typography>
-          </PageFooter>
         </Page3Styled>
         <Page4Styled>
           <Dot />
@@ -1389,9 +1404,6 @@ const Home = () => {
               </Page4Container>
             </Page4BoxStyled>
           </Page4InfoStyled>
-          <PageFooter>
-            <Typography font={FontType.MEDIUM_HEAD_02}>PROJECTS</Typography>
-          </PageFooter>
         </Page4Styled>
         <Page5Styled>
           <Dot />
@@ -1533,11 +1545,6 @@ const Home = () => {
               </Page5BoxInfo>
             </Page5BoxItem>
           </Page5Box>
-          <PageFooter>
-            <Typography font={FontType.MEDIUM_HEAD_02}>
-              EDU {'&'} ACTIVITIES
-            </Typography>
-          </PageFooter>
         </Page5Styled>
         <Page6Styled>
           <Dot />
@@ -1559,9 +1566,6 @@ const Home = () => {
               bbongwa123@gmail.com
             </Typography>
           </Page6Box>
-          <PageFooter>
-            <Typography font={FontType.MEDIUM_HEAD_02}>CONTACT</Typography>
-          </PageFooter>
         </Page6Styled>
         <EndStyled>
           <LinkButton
@@ -1588,13 +1592,16 @@ const Home = () => {
         </EndStyled>
       </HomeStyled>
       <Noise />
+      <PagePrograssBarStyled ref={prograssRef}>
+        <PagePrograssBar width={scrollWidth} />
+      </PagePrograssBarStyled>
     </>
   );
 };
 
 const HomeStyled = styled.div`
   width: 700%;
-  height: calc(100vh - 8.8em);
+  height: calc(100vh - 0.7em);
   display: flex;
   padding-top: 6em;
 `;
@@ -1655,7 +1662,7 @@ const ScrollIconWheel = styled.div`
 
 const Page1MainTitle = styled.div`
   padding-left: 10em;
-  padding-right: 37em;
+  padding-bottom: 4em;
 `;
 
 const Page1SubTitle = styled.div`
@@ -1664,32 +1671,34 @@ const Page1SubTitle = styled.div`
   align-items: center;
   position: absolute;
   left: 10em;
-  bottom: -3em;
+  bottom: 4.5em;
 `;
 
 const Page1Arrow = styled.div`
-  width: 75em;
+  width: 45em;
   height: 0.25em;
   position: relative;
+  border-radius: 30em;
   background-color: ${Color.DEPTH_D};
-  margin-left: 4em;
+  margin-left: 2em;
 
   ::after,
   ::before {
     content: '';
-    width: 2em;
+    width: 1.6em;
     height: 0.25em;
     position: absolute;
+    border-radius: 30em;
     background-color: ${Color.DEPTH_D};
   }
   ::after {
     transform: rotate(45deg);
-    top: -0.65em;
+    top: -0.5em;
     right: -0.25em;
   }
   ::before {
     transform: rotate(-45deg);
-    top: 0.65em;
+    top: 0.5em;
     right: -0.25em;
   }
 `;
@@ -1703,7 +1712,6 @@ const Page2Styled = styled.section`
   align-items: center;
   flex-shrink: 0;
   border-left: 3px solid ${Color.DEPTH_D};
-  border-bottom: 3px solid ${Color.DEPTH_D};
 `;
 
 const Page2Box = styled.div`
@@ -1911,7 +1919,6 @@ const Page3Styled = styled.section`
   align-items: center;
   flex-shrink: 0;
   border-left: 3px solid ${Color.DEPTH_D};
-  border-bottom: 3px solid ${Color.DEPTH_D};
 `;
 
 const Page3Item = styled.button<{ last?: boolean; active: boolean }>`
@@ -2012,7 +2019,6 @@ const Page4Styled = styled.section`
   align-items: center;
   flex-shrink: 0;
   border-left: 3px solid ${Color.DEPTH_D};
-  border-bottom: 3px solid ${Color.DEPTH_D};
   padding-right: 22em;
 `;
 
@@ -2176,7 +2182,6 @@ const Page5Styled = styled.section`
   align-items: center;
   flex-shrink: 0;
   border-left: 3px solid ${Color.DEPTH_D};
-  border-bottom: 3px solid ${Color.DEPTH_D};
 `;
 
 const Page5Box = styled.div`
@@ -2249,7 +2254,6 @@ const Page6Styled = styled.section`
   align-items: center;
   flex-shrink: 0;
   border-left: 3px solid ${Color.DEPTH_D};
-  border-bottom: 3px solid ${Color.DEPTH_D};
 `;
 
 const Page6Box = styled.div`
@@ -2293,16 +2297,22 @@ const LinkButton = styled.a`
   }
 `;
 
-const PageFooter = styled.div`
+const PagePrograssBarStyled = styled.div`
   width: 100%;
-  height: 9em;
-  display: flex;
-  align-items: center;
+  height: 0.7em;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(64, 75, 80, 0.2);
+`;
+
+const PagePrograssBar = styled.div<{ width: number }>`
+  width: ${({ width }) => width + '%'};
+  height: 100%;
   position: absolute;
-  left: -0.28em;
-  bottom: -9em;
-  padding-left: 2em;
-  border-left: 3px solid ${Color.DEPTH_D};
+  left: 0;
+  background-color: ${Color.DEPTH_D};
+  transition: 0.2s ease-out;
 `;
 
 export default Home;
